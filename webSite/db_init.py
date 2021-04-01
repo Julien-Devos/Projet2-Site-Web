@@ -1,12 +1,8 @@
 import sqlite3 as sqlite
-
-import click
 from flask import current_app, g
 from flask.cli import with_appcontext
 from webSite.db_create import create_db
-
-inserts = ['insert_animaux.sql','insert_animaux_types.sql','insert_animaux_velages.sql','insert_complications.sql',
-           'insert_familles.sql','insert_types.sql','insert_velages.sql','insert_velages_complications.sql']
+import click
 
 
 def init_db():
@@ -21,6 +17,7 @@ def init_db_command():
     init_db()
     click.echo('The database has been successfully filled with the data !')
 
+
 def get_db():
     if 'db' not in g:
         g.db = sqlite.connect(
@@ -31,11 +28,13 @@ def get_db():
 
     return g.db
 
+
 def close_db(e=None):
     db = g.pop('db', None)
 
     if db is not None:
         db.close()
+
 
 def init_app(app):
     app.teardown_appcontext(close_db)
