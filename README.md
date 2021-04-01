@@ -28,4 +28,4 @@ données provenant d'une DataBase pour en faire des visualisations
     $ flask run
     ```
     
-  - Rendez vous alors sur <http://127.0.0.1:5000>
+  - Rendez vous alors sur: <http://127.0.0.1:5000>
