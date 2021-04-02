@@ -21,7 +21,7 @@ def create_app(test_config=None):
     def index():
         return render_template('index.html')
     
-    # Auto reload for pythonanywhere
+    # Auto reload for pythonanywhere blablabla
     @app.route('/update_server', methods=['POST'])
     def webhook():
         if request.method == 'POST':
