@@ -32,7 +32,7 @@ def create_app(test_config=None):
         else:
             return 'Wrong event type', 400
 
-    from . import db_init
+    from webSite import db_init
     db_init.init_app(app)
 
     return app
