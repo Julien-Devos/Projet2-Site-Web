@@ -8,7 +8,7 @@ données provenant d'une DataBase pour en faire des visualisations
 ## Liens:
 
 > - **Lien du Repository GitHub:** <https://github.com/Julien-Devos/Projet2-Site-Web>
-> - **Lien du site** <*COMING SOON*>
+> - **Lien du site** <http://juliendv.eu.pythonanywhere.com>
 
 ## Installation:
 
