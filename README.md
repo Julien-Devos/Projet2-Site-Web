@@ -17,7 +17,7 @@ données provenant d'une DataBase pour en faire des visualisations
   - Pour installer les packages nécessaires:
 
     ```python
-    $ pip install -e .
+    $ pip install -r requirements.txt
     ```
 
   - Une fois les packages installés,
