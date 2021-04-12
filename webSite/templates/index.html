@@ -1,12 +1,32 @@
-<!DOCTYPE html>
-<head>
-    <title>{% block title %}{% endblock %} Projet 2</title>
-    <link href="{{url_for('static',filename='style.css')}}" rel="stylesheet" id="pagestyle">
-    <link rel="icon" href="{{url_for('static', filename='vache.ico')}}">
-</head>
-<html lang="en">
+{% extends 'base.html' %}
+
+{% block header %}
+    <title>{% block title %}Accueil{% endblock %}</title>
+{% endblock %}
+
+{% block content %}
    <body>
-        <img id="logo" src="{{url_for('static', filename='vache.png')}}" alt="logo">
-        <a class="hello">Hello world !</a>
+        <h1 class="titre">La ferme des 3 chênes</h1>
+
+        <div class="box">
+            <p class="paragraphe" id="intro">Bienvenu.e sur le site de la ferme des 3 chênes. Ce site a pour but d'informatiser les données de la ferme
+                pour permettre de les analyser plus facilement. </p>
+
+        </div>
+        <div class="box">
+            <p class="paragraphe" id="p1"> Le site analysera les données présente dans le database (velages,animaux, etc)...</p>
+
+        </div>
+        <div class="box">
+            <p class="paragraphe" id="p2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus vulputate neque, sed lobortis quam mollis quis. Sed sed mauris velit. Mauris consequat ipsum id purus faucibus, ac aliquet dui vehicula. Nullam eget tincidunt lorem. Quisque vehicula ligula vel auctor auctor. Donec nec magna non neque laoreet aliquet. Maecenas in erat urna. Aliquam erat volutpat. Suspendisse mattis nunc eu nisl ultricies viverra. Vivamus elementum a urna vitae rutrum.
+
+                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce et rutrum dui. Donec ut nunc mauris. Vestibulum placerat turpis et posuere maximus. Nullam vel facilisis felis, sed tempor ex. Ut in neque orci. Nam sed convallis tortor. Ut eu velit tincidunt, consectetur nibh dapibus, commodo risus. Nullam in lectus id turpis imperdiet commodo et vitae velit. Suspendisse ut tortor quam. Donec eu orci tempor, interdum nunc eget, dapibus dui. Sed dui quam, maximus at odio nec, commodo aliquet nunc. In congue elementum tellus, at gravida ante egestas ut.
+
+                Maecenas non leo dictum, gravida erat commodo, vulputate velit. Quisque in erat semper, vehicula ligula quis, feugiat lorem. Nam in gravida nunc. Maecenas ultricies, dui efficitur facilisis dictum, justo magna cursus libero, eu pellentesque lacus nulla ac libero. Vestibulum vitae iaculis turpis. Duis in lectus justo. Quisque sed magna lorem.
+
+                Proin ut turpis vitae mauris ultrices gravida et vel est. Cras lobortis dui ipsum, vitae sagittis ante dapibus quis. Praesent consectetur tellus ut nulla pulvinar, a varius libero lacinia. Phasellus vitae lacus dictum, consectetur urna quis, accumsan justo. Nam tincidunt hendrerit ipsum vel aliquam. Aliquam eleifend accumsan est nec efficitur. Duis faucibus dignissim nisi vel bibendum. Vestibulum sed volutpat nisl, et ultricies lacus. Quisque ut malesuada elit, vitae sodales neque. Aliquam iaculis ex leo, sit amet fermentum velit convallis at. Maecenas vehicula porttitor convallis. Aliquam dignissim volutpat dolor in sagittis. Curabitur et massa sit amet justo faucibus sodales eu et turpis. Morbi at sem convallis odio pellentesque mollis quis sit amet nulla.
+
+                Ut at ante ut ligula rhoncus convallis eu id eros. Donec metus augue, vulputate id nulla at, tempor convallis tortor. Duis accumsan dapibus ligula sit amet hendrerit. Nam id est eu mauris ultrices viverra ut in nibh. Quisque eu dui dictum, finibus neque eget, congue arcu. Ut at nulla consectetur, euismod elit id, ultrices nisi. Aenean sit amet dignissim mi, sodales malesuada nunc. Praesent id erat ut sapien vestibulum scelerisque non ac mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis scelerisque eros. Praesent vulputate rutrum dictum. Aenean maximus lorem ut tortor consectetur placerat. Quisque ullamcorper ornare elit, blandit facilisis turpis suscipit sed. Nullam condimentum ex et nunc porttitor, ut pretium justo tempus. Praesent eget gravida ligula.</p>
+        </div>
    </body>
-</html>
+{% endblock %}

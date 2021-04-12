@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}{% endblock %} - Projet 2</title>
+    <link href={{url_for('static',filename='style.css')}} rel="stylesheet" id="pagestyle">
+    <link rel="icon" href="{{url_for('static', filename='img/favicon.ico')}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <a href="{{url_for('index')}}" class="image-link">
+        <img class="logo" src="{{url_for('static',filename='img/vache.png')}}">
+        </a>
+       <ul>
+        <li><a {% if request.url_rule.endpoint == "index" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('index')}}">Accueil</a></li>
+        <li><a {% if request.url_rule.endpoint == "graphs.graph" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('graphs.graph')}}">Figures</a></li>
+       </ul>
+    </nav>
+    {% block content %}{% endblock %}
+</body>
+</html>
