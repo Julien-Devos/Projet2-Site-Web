@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <title>{% block title %}Figure 5{% endblock %}</title>
+{% endblock %}
+
+{% block content %}
+   <body>
+        <p> yep </p>
+        <canvas id="line-chart" width="1600" height="700"></canvas>
+        <script>
+            var ctx = document.getElementById('line-chart');
+            var stackedLine = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['test'],
+                    datasets: [
+                        {
+                            data: [12],
+                            axis: 'y'
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            stacked: true
+                        }
+                    }
+                }
+            });
+        </script>
+   </body>
+{% endblock %}

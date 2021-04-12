@@ -15,3 +15,9 @@ def graph():
 
 
     return render_template('graph.html',velage=velages)
+
+@bp.route('/figure_5')
+def figure_5():
+    db = get_db()
+
+    return render_template('figure_5.html')
