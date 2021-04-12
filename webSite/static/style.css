@@ -6,11 +6,14 @@ html{
     background-color: #001f3f;
 }
 .hello{
+    display: flex;
+    flex-wrap: nowrap;
     font-family: 'Roboto',sans-serif;
     font-size: 80px;
-    padding: 500px 0 500px;
-    display: flex;
+    font-weight: bold;
     justify-content: center;
+    text-align: center;
+    margin-top: 300px;
     color: #80BFFF;
 }
 img{
