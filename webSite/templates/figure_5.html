@@ -13,15 +13,28 @@
             var stackedLine = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: ['test'],
+                    labels: ['fami1','fami2'],
                     datasets: [
                         {
-                            data: [12],
-                            axis: 'y'
+                            label: "Femelles",
+                            data: [10, 12],
+                            axis: 'x',
+                            borderColor: "#d24343",
+                            hoverBorderColor: "#9d1818",
+                            fill: false
+                        },
+                        {
+                            label: "Jums",
+                            data: [6,7],
+                            axis: 'x',
+                            borderColor: "#69d962",
+                            hoverBorderColor: "#1d7317",
+                            fill: false
                         }
                     ]
                 },
                 options: {
+                    responsive: true,
                     scales: {
                         y: {
                             stacked: true
