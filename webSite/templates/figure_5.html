@@ -9,26 +9,39 @@
         <p> yep </p>
         <canvas id="line-chart" width="1600" height="700"></canvas>
         <script>
+            var nfamilles = {{ data[0] | safe }}
+            var taux_fem = {{ data[1] | safe }}
+            var taux_jum = {{ data[2] | safe }}
+            var dead = {{ data[3] | safe }}
+
             var ctx = document.getElementById('line-chart');
             var stackedLine = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: ['fami1','fami2'],
+                    labels: nfamilles,
                     datasets: [
                         {
-                            label: "Femelles",
-                            data: [10, 12],
-                            axis: 'x',
+                            label: "Taux de femelles",
+                            data: taux_fem,
+                            axis: 'y',
                             borderColor: "#d24343",
                             hoverBorderColor: "#9d1818",
                             fill: false
                         },
                         {
-                            label: "Jums",
-                            data: [6,7],
-                            axis: 'x',
-                            borderColor: "#69d962",
-                            hoverBorderColor: "#1d7317",
+                            label: "Taux de jumeaux",
+                            data: taux_jum,
+                            axis: 'y',
+                            borderColor: "#23771f",
+                            hoverBorderColor: "#65e260",
+                            fill: false
+                        },
+                        {
+                            label: "Taux de morts prématurés",
+                            data: dead,
+                            axis: 'y',
+                            borderColor: "#549fec",
+                            hoverBorderColor: "#256ba9",
                             fill: false
                         }
                     ]

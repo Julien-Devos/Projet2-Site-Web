@@ -26,9 +26,9 @@ def figure_5():
         donnees.append(donnee)
 
     d = {}
+
     for donnee in donnees:
         sexe, mere_id, date_naiss, nom, mort_ne, decede = donnee[0], donnee[1], donnee[2], donnee[3], donnee[4], donnee[5]
-        print(sexe, mere_id, date_naiss, nom, mort_ne, decede)
         if nom not in d:
             if sexe == 'F':
                 d[nom] = [1, 0, [(mere_id, date_naiss)], 0, mort_ne + decede]
@@ -39,13 +39,17 @@ def figure_5():
                 d[nom][0] += 1
             elif sexe == 'M':
                 d[nom][1] += 1
-            for mere, date in d[nom][2]:
-                if mere_id == mere and date_naiss == date:
-                    d[nom][3] += 1
-                # else:
-                #     d[nom][2].append((mere_id, date_naiss))
+            if mere_id == d[nom][2][0] and date_naiss == d[nom][2][1]:
+                d[nom][3] += 1
+            else:
+                d[nom][2] = (mere_id, date_naiss)
             d[nom][4] += mort_ne + decede
-    print (d)
 
-
-    return render_template('figure_5.html')
+    data_list = [[], [], [], []]
+    for i in d.items():
+        data_list[0].append(i[0])
+        data_list[1].append(round(((i[1][0] / (i[1][0]+i[1][1]))*100)))
+        data_list[2].append(round(((i[1][3] / (i[1][0]+i[1][1]))*100)))
+        data_list[3].append(round(((i[1][4] / (i[1][0]+i[1][1]))*100)))
+    print (data_list)
+    return render_template('figure_5.html', data=data_list)
