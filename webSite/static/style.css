@@ -1,3 +1,20 @@
+
+ /* Graphics colors */
+:root{
+  --vColJ: #2471A3;
+  --vHovColJ: #2980B9;
+  --mColJ: #17A589;
+  --mHovColJ: #1ABC9C;
+  --dColJ: #CB4335;
+  --dHovColJ: #EC7063;
+  --tCol: #000;
+  --lCol: #000;
+  --xGCol: rgba(0,0,0,0.1);
+  --xValCol: #000;
+  --yGCol: rgba(0,0,0,0.1);
+  --yValCol: #000;
+}
+
 @font-face {
     font-family: Roboto;
     src: url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
