@@ -45,11 +45,16 @@ def figure_5():
                 d[nom][2] = (mere_id, date_naiss)
             d[nom][4] += mort_ne + decede
 
-    data_list = [[], [], [], []]
+    d_2 = {}
     for i in d.items():
+        d_2[i[0]] = [round(((i[1][0] / (i[1][0]+i[1][1]))*100)), round(((i[1][3] / (i[1][0]+i[1][1]))*100)), round(((i[1][4] / (i[1][0]+i[1][1]))*100))]
+    d_2 = {k: v for k, v in sorted(d_2.items(), key=lambda item: item[1][0], reverse=False)}
+
+    data_list = [[], [], [], []]
+    for i in d_2.items():
         data_list[0].append(i[0])
-        data_list[1].append(round(((i[1][0] / (i[1][0]+i[1][1]))*100)))
-        data_list[2].append(round(((i[1][3] / (i[1][0]+i[1][1]))*100)))
-        data_list[3].append(round(((i[1][4] / (i[1][0]+i[1][1]))*100)))
+        data_list[1].append(i[1][0])
+        data_list[2].append(i[1][1])
+        data_list[3].append(i[1][2])
     print (data_list)
     return render_template('figure_5.html', data=data_list)
