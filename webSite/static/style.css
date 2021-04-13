@@ -13,6 +13,9 @@
   --xValCol: #000;
   --yGCol: rgba(0,0,0,0.1);
   --yValCol: #000;
+  --fColB: #DDA0DD;
+  --jColB: #FFDAB9;
+  --dColB: #AFEEEE;
 }
 
 @font-face {

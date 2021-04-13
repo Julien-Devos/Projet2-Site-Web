@@ -5,9 +5,19 @@
 {% endblock %}
 {% block content %}
    <body>
-        <h> Graphe  </h>
         <canvas id="line-chart" width="1600" height="700"></canvas>
         <script>
+            var css = getComputedStyle(document.body)
+            var fCol = css.getPropertyValue('--fColB')
+            var jCol = css.getPropertyValue('--jColB')
+            var dCol = css.getPropertyValue('--dColB')
+            var tCol = css.getPropertyValue('--tCol')
+            var lCol = css.getPropertyValue('--lCol')
+            var xGCol = css.getPropertyValue('--xGCol')
+            var xValCol = css.getPropertyValue('--xValCol')
+            var yGCol = css.getPropertyValue('--yGCol')
+            var yValCol = css.getPropertyValue('--yValCol')
+
             var nfamilles = {{ data[0] | safe }}
             var taux_fem = {{ data[1] | safe }}
             var taux_jum = {{ data[2] | safe }}
@@ -22,22 +32,19 @@
                         {
                             label: "Taux de femelles",
                             data: taux_fem,
-                            axis: 'y',
-                            borderColor: "#FFDAB9",
+                            borderColor: fCol,
                             fill: false
                         },
                         {
                             label: "Taux de jumeaux",
                             data: taux_jum,
-                            axis: 'y',
-                            borderColor: "#DDA0DD",
+                            borderColor: jCol,
                             fill: false
                         },
                         {
                             label: "Taux de morts prématurés",
                             data: dead,
-                            axis: 'y',
-                            borderColor: "#AFEEEE",
+                            borderColor: dCol,
                             fill: false
                         }
                     ]
@@ -47,8 +54,41 @@
                     scales: {
                         y: {
                             stacked: true
+                        },
+                        xAxes: [{
+                          gridLines: {
+                              color: xGCol
+                            },
+                          ticks: {
+                              fontColor: xValCol
+                          },
+                        }],
+                      yAxes: [{
+                          gridLines: {
+                                color: yGCol
+                            },
+                          ticks: {
+                              fontColor: yValCol
+                          },
+                        }],
+                    },
+                    layout: {
+                      padding: 25
+                    },
+                    title: {
+                        display: true,
+                        text: "Graphique des taux de femelles, de jumeaux et de morts prématurés",
+                        fontColor: tCol
+
+                    },
+                    legend: {
+                        labels: {
+                            fontColor: lCol
                         }
-                    }
+                    },
+                    tooltips: {
+                        mode: 'label',
+                    },
                 }
             });
         </script>
