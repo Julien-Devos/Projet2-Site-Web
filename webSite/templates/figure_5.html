@@ -3,10 +3,9 @@
 {% block header %}
     <title>{% block title %}Figure 5{% endblock %}</title>
 {% endblock %}
-
 {% block content %}
    <body>
-        <p> yep </p>
+        <h> Graphe  </h>
         <canvas id="line-chart" width="1600" height="700"></canvas>
         <script>
             var nfamilles = {{ data[0] | safe }}
@@ -24,24 +23,21 @@
                             label: "Taux de femelles",
                             data: taux_fem,
                             axis: 'y',
-                            borderColor: "#d24343",
-                            hoverBorderColor: "#9d1818",
+                            borderColor: "#FFDAB9",
                             fill: false
                         },
                         {
                             label: "Taux de jumeaux",
                             data: taux_jum,
                             axis: 'y',
-                            borderColor: "#23771f",
-                            hoverBorderColor: "#65e260",
+                            borderColor: "#DDA0DD",
                             fill: false
                         },
                         {
                             label: "Taux de morts prématurés",
                             data: dead,
                             axis: 'y',
-                            borderColor: "#549fec",
-                            hoverBorderColor: "#256ba9",
+                            borderColor: "#AFEEEE",
                             fill: false
                         }
                     ]
