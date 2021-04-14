@@ -19,7 +19,7 @@
         </a>
        <ul>
         <li><a {% if request.url_rule.endpoint == "index" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('index')}}">Accueil</a></li>
-        <li><a {% if request.url_rule.endpoint == "graphs.graph" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('graphs.graph')}}">Figures</a></li>
+        <li><a {% if request.url_rule.endpoint == "graphs.graph" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('graphs.figure_5')}}">Figure 5</a></li>
        </ul>
     </nav>
     {% block content %}{% endblock %}
