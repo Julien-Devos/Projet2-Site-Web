@@ -19,7 +19,11 @@
         </a>
        <ul>
         <li><a {% if request.url_rule.endpoint == "index" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('index')}}">Accueil</a></li>
-        <li><a {% if request.url_rule.endpoint == "graphs.graph" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('graphs.figure_5')}}">Figure 5</a></li>
+        <li><a {% if request.url_rule.endpoint == "graphs.figure1_1" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('graphs.figure1_1')}}">Figure 1.1</a></li>
+        <li><a {% if request.url_rule.endpoint == "graphs.figure3_1" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('graphs.figure3_1')}}">Figure 3.1</a></li>
+        <li><a {% if request.url_rule.endpoint == "graphs.figure3_2" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('graphs.figure3_2')}}">Figure 3.2</a></li>
+        <li><a {% if request.url_rule.endpoint == "graphs.figure4_2" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('graphs.figure4_2')}}">Figure 4.2</a></li>
+        <li><a {% if request.url_rule.endpoint == "graphs.figure_5" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('graphs.figure_5')}}">Figure 5</a></li>
        </ul>
     </nav>
     {% block content %}{% endblock %}

@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}Figure 3.2{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <body>
+        <p>{{vivants}}</p>
+        <canvas id="bar-chart" width="1600" height="700"></canvas>
+            <script>
+                var css = getComputedStyle(document.body)
+                var vCol = css.getPropertyValue('--vColJ')
+                var vHovCol = css.getPropertyValue('--vHovColJ')
+                var mCol = css.getPropertyValue('--mColJ')
+                var mHovCol = css.getPropertyValue('--mHovColJ')
+                var dCol = css.getPropertyValue('--dColJ')
+                var dHovCol = css.getPropertyValue('--dHovColJ')
+                var tCol = css.getPropertyValue('--tCol')
+                var lCol = css.getPropertyValue('--lCol')
+                var xGCol = css.getPropertyValue('--xGCol')
+                var xValCol = css.getPropertyValue('--xValCol')
+                var yGCol = css.getPropertyValue('--yGCol')
+                var yValCol = css.getPropertyValue('--yValCol')
+
+
+                var vivants = {{data[1] | safe}}
+                var morts_nes = {{data[2] | safe}}
+                var decede = {{data[3] | safe}}
+                var familles = {{data[0] | safe}}
+                var bar_ctx = document.getElementById('bar-chart');
+                var bar_chart = new Chart(bar_ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: familles,
+                        datasets: [
+                        {
+                            label: 'Vivants',
+                            data: vivants,
+                            backgroundColor: vCol,
+                            hoverBackgroundColor: vHovCol,
+                            hoverBorderWidth: 0
+                        },
+                        {
+                            label: 'Morts nés',
+                            data: morts_nes,
+                            backgroundColor: mCol,
+                            hoverBackgroundColor: mHovCol,
+                            hoverBorderWidth: 0
+                        },
+                        {
+                            label: 'Décès prématurés',
+                            data: decede,
+                            backgroundColor: dCol,
+                            hoverBackgroundColor: dHovCol,
+                            hoverBorderWidth: 0
+                        },
+                        ]
+                    },
+                       options: {
+                        layout: {
+                          padding: 25
+                        },
+                        title: {
+                            display: true,
+                            text: "Graphique du taux d'animaux vivants/morts-nés/décédés prématurément par an et par famille",
+                            fontColor: tCol
+
+                        },
+                        legend: {
+                            labels: {
+                                fontColor: lCol
+                            }
+                        },
+                        responsive: true,
+                        tooltips: {
+                            mode: 'label',
+                        },
+                        scales: {
+                          xAxes: [{
+                              gridLines: {
+                                  color: xGCol
+                                },
+                              ticks: {
+                                  fontColor: xValCol
+                              },
+                              barPercentage: 0.4,
+                              stacked: true,
+                              beginAtZero: true
+                            }],
+                          yAxes: [{
+                              gridLines: {
+                                    color: yGCol
+                                },
+                              ticks: {
+                                  fontColor: yValCol
+                              },
+                              stacked: true,
+                              beginAtZero: true
+                            }],
+                        },
+                    },
+                   }
+                );
+            </script>
+    </body>
+{% endblock %}
