@@ -7,6 +7,15 @@ bp = Blueprint('graphs', __name__)
 
 @bp.route('/figure1_1')
 def figure1_1():
+    db = get_db()
+
+    velages = []
+    for velage in db.execute('SELECT velages.date FROM velages ORDER BY velages.id'):
+        velages.append(velage)
+
+    for date in velages:
+        print(date)
+
     return render_template('figure1_1.html')
 
 
