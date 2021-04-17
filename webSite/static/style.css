@@ -23,7 +23,7 @@
     src: url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 }
 html{
-    background-color: #ffffff;
+    background-color: #f8fbfc;
 }
 .titre{
     display: flex;
@@ -50,7 +50,7 @@ img{
     /*background-color: rgba(0,255,0,0.2);*/
     width: 1500px;
     font-family: 'Roboto',sans-serif;
-    color: #000000;
+    color: #221f1d;
     font-size: 20px;
 }
 #intro{
@@ -77,7 +77,7 @@ img{
   box-sizing: border-box;
 }
 nav{
-  background: #0e599b;
+  background: #166088;
   height: 80px;
   width: 100%;
 }
@@ -105,7 +105,7 @@ nav ul li a{
   text-transform: uppercase;
 }
 a.active,a.not-active:hover{
-  background: #0c4a81;
+  background: #14567a;
   transition: .5s;
 }
 .checkbtn{
