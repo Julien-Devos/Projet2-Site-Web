@@ -1,9 +1,15 @@
 from flask import Blueprint,render_template
 from webSite.db_init import get_db
 from datetime import date
+from webSite.__init__ import styleSheet
 
 bp = Blueprint('graphs', __name__)
 
+# On every reload check wich style to use
+@bp.before_request
+def before_request():
+    global stylesheet
+    stylesheet = styleSheet()
 
 @bp.route('/figure1_1')
 def figure1_1():
@@ -16,12 +22,12 @@ def figure1_1():
     for date in velages:
         print(date)
 
-    return render_template('figure1_1.html')
+    return render_template('figure1_1.html',style=stylesheet)
 
 
 @bp.route('/figure3_1')
 def figure3_1():
-    return render_template('figure3_1.html')
+    return render_template('figure3_1.html',style=stylesheet)
 
 
 @bp.route('/figure3_2')
@@ -76,12 +82,12 @@ def figure3_2():
         data_lst[3].append(Data[nom][2])
         data_lst[4].append(Data[nom][4])
 
-    return render_template('figure3_2.html',data=data_lst)
+    return render_template('figure3_2.html',data=data_lst,style=stylesheet)
 
 
 @bp.route('/figure4_2')
 def figure4_2():
-    return render_template('figure4_2.html')
+    return render_template('figure4_2.html',style=stylesheet)
 
 
 @bp.route('/figure_5')
@@ -125,4 +131,4 @@ def figure_5():
         data_list[1].append(i[1][0])
         data_list[2].append(i[1][1])
         data_list[3].append(i[1][2])
-    return render_template('figure_5.html', data=data_list)
+    return render_template('figure_5.html', data=data_list,style=stylesheet)

@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <title>{% block title %}{% endblock %} - Projet 2</title>
-    <link href={{url_for('static',filename='style.css')}} rel="stylesheet" id="pagestyle">
+    <link href={{style}} rel="stylesheet" id="pagestyle">
     <link rel="icon" href="{{url_for('static', filename='img/logo.ico')}}">
     <script src="{{url_for('static', filename='Chart.js/dist/Chart.js')}}"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js%22%3E"></script>  <!-- For the navbar icon -->
+    <script src="{{url_for('static', filename='script.js')}}"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
@@ -17,6 +18,7 @@
         <a href="{{url_for('index')}}" class="image-link">
         <img class="logo" src="{{url_for('static',filename='img/logo.png')}}">
         </a>
+        <img class="theme_bulb" onclick="changeThemeCookie();darkMode();" src="{{url_for('static',filename='icons/light_white.png')}}" title="Mode sombre">
        <ul>
         <li><a {% if request.url_rule.endpoint == "index" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('index')}}">Accueil</a></li>
         <li><a {% if request.url_rule.endpoint == "graphs.figure1_1" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('graphs.figure1_1')}}">Figure 1.1</a></li>
@@ -27,5 +29,6 @@
        </ul>
     </nav>
     {% block content %}{% endblock %}
+    <a class="credits">© 2021 Groupe 1C-3 LINFO1102 </a>
 </body>
 </html>

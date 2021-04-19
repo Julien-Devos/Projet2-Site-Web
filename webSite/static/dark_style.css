@@ -56,7 +56,7 @@ html{
     justify-content: center;
     text-align: center;
     margin-top: 100px;
-    color: #5c90ac;
+    color: #ea0848;
 }
 
 
@@ -249,4 +249,3 @@ a.active,a.not-active:hover{
     left: 0;
   }
 }
-
