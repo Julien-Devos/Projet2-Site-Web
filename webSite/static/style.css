@@ -1,6 +1,7 @@
 
  /* Graphics colors */
 :root{
+  --background: #f8fbfc;
   --vColJ: #2471A3;
   --vHovColJ: #2980B9;
   --mColJ: #17A589;
@@ -16,6 +17,10 @@
   --fColB: #DDA0DD;
   --jColB: #FFDAB9;
   --dColB: #AFEEEE;
+  --bColB: #f167f1;
+  --bHovColB: #c644c6;
+  --baColB: rgba(241, 103, 241,0.2);
+  --baHovColB: rgba(198, 68, 198, 0.2);
 }
 
 @font-face {
@@ -207,7 +212,7 @@ a.active,a.not-active:hover{
 #check{
   display: none;
 }
-@media (max-width: 952px){
+@media (max-width: 1000px){
   .logo{
     width: 70px;
     height: 70px;
@@ -219,15 +224,21 @@ a.active,a.not-active:hover{
     font-size: 16px;
   }
 }
-@media (max-width: 858px){
+@media (max-width: 950px){
+  .theme_bulb{
+    display: none;
+  }
   .checkbtn{
     display: block;
+  }
+  .titre{
+    font-size: 50px;
   }
   ul{
     position: fixed;
     width: 100%;
     height: 100vh;
-    background: #216199;
+    background: #5c90ac;
     top: 80px;
     left: -100%;
     text-align: center;

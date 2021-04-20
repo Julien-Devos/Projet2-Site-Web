@@ -6,6 +6,79 @@
 
 {% block content %}
     <body>
-        TODO
+        <canvas id="bar-chart" width="1600" height="700"></canvas>
+            <script>
+                var css = getComputedStyle(document.body)
+                var bCol = css.getPropertyValue('--bColB')
+                var bHovCol = css.getPropertyValue('--bHovColB')
+                var baCol = css.getPropertyValue('--baColB')
+                var baHovCol = css.getPropertyValue('--baHovColB')
+                var tCol = css.getPropertyValue('--tCol')
+                var lCol = css.getPropertyValue('--lCol')
+                var xGCol = css.getPropertyValue('--xGCol')
+                var xValCol = css.getPropertyValue('--xValCol')
+                var yGCol = css.getPropertyValue('--yGCol')
+                var yValCol = css.getPropertyValue('--yValCol')
+                var background = css.getPropertyValue('--background')
+
+                var datas = {{data | safe}}
+                var bar_ctx = document.getElementById('bar-chart');
+                var bar_chart = new Chart(bar_ctx, {
+                    type: 'radar',
+                    data: {
+                        labels: [
+                            'New Moon',
+                            'Waxing Crescent',
+                            'First Quarter',
+                            'Waxing Gibbous',
+                            'Full Moon',
+                            'Waning Gibbous',
+                            'Last Quarter',
+                            'Waning Crescent',
+                          ],
+                        datasets: [
+                        {
+                            label: 'Velages',
+                            // [SUM NEW MOON, SUM WAXING CRESENT, SUM...]
+                            data: datas,
+                            borderColor: bCol,
+                            hoverBorderColor: bHovCol,
+                            backgroundColor: baCol,
+                            hoverBackgroundColor: baHovCol,
+                            hoverBorderWidth: 0
+                        }
+                        ]
+                    },
+                       options: {
+                        layout: {
+                          padding: 25
+                        },
+                        title: {
+                            display: true,
+                            text: "Graphique du taux de velages par phases de lune",
+                            fontColor: tCol
+
+                        },
+                        legend: {
+                            labels: {
+                                fontColor: lCol
+                            }
+                        },
+                        responsive: true,
+                        scale: {
+                            pointLabels:{
+                               fontColor:lCol,
+                            },
+                            ticks: {
+                                backdropColor: background,
+                                fontColor: lCol,
+                                beginAtZero: true,
+                                min: 300,
+                            }
+                        }
+                    },
+                   }
+                );
+            </script>
     </body>
 {% endblock %}

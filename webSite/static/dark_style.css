@@ -1,6 +1,7 @@
 
  /* Graphics colors */
 :root{
+  --background: #36393f;
   --vColJ: #2471A3;
   --vHovColJ: #2980B9;
   --mColJ: #17A589;
@@ -16,6 +17,10 @@
   --fColB: #DDA0DD;
   --jColB: #FFDAB9;
   --dColB: #AFEEEE;
+  --bColB: #f167f1;
+  --bHovColB: #c644c6;
+  --baColB: rgba(241, 103, 241,0.1);
+  --baHovColB: rgba(198, 68, 198, 0.1);
 }
 
 @font-face {

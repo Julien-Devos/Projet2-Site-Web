@@ -1,7 +1,8 @@
 from flask import Blueprint,render_template
 from webSite.db_init import get_db
-from datetime import date
+from datetime import date,datetime
 from webSite.__init__ import styleSheet
+from . import moon
 
 bp = Blueprint('graphs', __name__)
 
@@ -19,10 +20,19 @@ def figure1_1():
     for velage in db.execute('SELECT velages.date FROM velages ORDER BY velages.id'):
         velages.append(velage)
 
-    for date in velages:
-        print(date)
+    d = {'New Moon': 0,'Waxing Crescent': 0,'First Quarter': 0,'Waxing Gibbous': 0,'Full Moon': 0,'Waning Gibbous': 0,'Last Quarter': 0,'Waning Crescent': 0}
+    for dates in velages:
+        dateSplit = dates[0].split("/")
+        date = datetime(int(dateSplit[2]),int(dateSplit[1]),int(dateSplit[0]))
+        moonPhase = moon.phase(date)
+        d[moonPhase] += 1
 
-    return render_template('figure1_1.html',style=stylesheet)
+    data = []
+    for phaseCount in d.keys():
+        data.append(d[phaseCount])
+    print(data)
+
+    return render_template('figure1_1.html',style=stylesheet,data=data)
 
 
 @bp.route('/figure3_1')
