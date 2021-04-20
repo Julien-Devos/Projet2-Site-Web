@@ -7,12 +7,12 @@
   --mHovColJ: #1ABC9C;
   --dColJ: #CB4335;
   --dHovColJ: #EC7063;
-  --tCol: #000;
-  --lCol: #000;
-  --xGCol: rgba(0,0,0,0.1);
-  --xValCol: #000;
-  --yGCol: rgba(0,0,0,0.1);
-  --yValCol: #000;
+  --tCol: #E0E5E9;
+  --lCol: #E0E5E9;
+  --xGCol: rgba(47, 49, 54, 0.5);
+  --xValCol: #E0E5E9;
+  --yGCol: rgba(47, 49, 54, 0.5);
+  --yValCol: #E0E5E9;
   --fColB: #DDA0DD;
   --jColB: #FFDAB9;
   --dColB: #AFEEEE;
@@ -33,10 +33,11 @@
 
 
 html{
-    background-color: #f8fbfc;
+    background-color: #36393f;
 }
 
 .credits{
+  color: #d1cac5;
   display: flex;
   flex-wrap: nowrap;
   text-align: center;
@@ -56,7 +57,7 @@ html{
     justify-content: center;
     text-align: center;
     margin-top: 100px;
-    color: #ea0848;
+    color: #d1cac5;
 }
 
 
@@ -105,7 +106,7 @@ html{
   margin-top: 230px;
 }
 .btn{
-  background-color: #fff; /* Green */
+  background-color: #d1cac5; /* Green */
   border: 2px solid #072c4f;
   color: #000;
   padding: 15px 32px;
@@ -120,7 +121,7 @@ html{
   margin-right: auto;
 }
 .btn:active, .btn:hover{
-  color: white;
+  color: #d1cac5;
   border: solid 0px;
   background-color: #072c4f;
 }
@@ -136,7 +137,7 @@ html{
     /*background-color: rgba(0,255,0,0.2);*/
     width: 1500px;
     font-family: 'Open-sans',sans-serif;
-    color: #221f1d;
+    color: #d1cac5;
     font-size: 20px;
 }
 #intro{
@@ -163,7 +164,7 @@ html{
   box-sizing: border-box;
 }
 nav{
-  background: #166088;
+  background: #2f3136;
   height: 80px;
   width: 100%;
 }
@@ -192,12 +193,12 @@ nav ul li a{
   text-transform: uppercase;
 }
 a.active,a.not-active:hover{
-  background: #14567a;
+  background: #212226;
   transition: .5s;
 }
 .checkbtn{
   font-size: 30px;
-  color: #f8fbfc;
+  color: #d1cac5;
   float: right;
   line-height: 80px;
   margin-right: 40px;
