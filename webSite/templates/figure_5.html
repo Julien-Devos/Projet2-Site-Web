@@ -8,9 +8,10 @@
         <canvas id="line-chart" width="1600" height="700"></canvas>
         <script>
             var css = getComputedStyle(document.body)
-            var fCol = css.getPropertyValue('--fColB')
-            var jCol = css.getPropertyValue('--jColB')
-            var dCol = css.getPropertyValue('--dColB')
+            var fCol = css.getPropertyValue('--fColB_dark')
+            var jCol = css.getPropertyValue('--jColB_dark')
+            var dCol = css.getPropertyValue('--dColB_dark')
+            var vCol = css.getPropertyValue('--vColB')
             var tCol = css.getPropertyValue('--tCol')
             var lCol = css.getPropertyValue('--lCol')
             var xGCol = css.getPropertyValue('--xGCol')
@@ -51,7 +52,7 @@
                         {
                             label: "Nombre de velages",
                             data: n_velages,
-                            borderColor: "#87e978",
+                            borderColor: vCol,
                             fill: false
                         }
                     ]
