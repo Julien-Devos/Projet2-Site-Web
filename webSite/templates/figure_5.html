@@ -22,6 +22,7 @@
             var taux_fem = {{ data[1] | safe }}
             var taux_jum = {{ data[2] | safe }}
             var dead = {{ data[3] | safe }}
+            var n_velages = {{ data[4] | safe }}
 
             var ctx = document.getElementById('line-chart');
             var stackedLine = new Chart(ctx, {
@@ -45,6 +46,12 @@
                             label: "Taux de morts prématurés",
                             data: dead,
                             borderColor: dCol,
+                            fill: false
+                        },
+                        {
+                            label: "Nombre de velages",
+                            data: n_velages,
+                            borderColor: "#87e978",
                             fill: false
                         }
                     ]
