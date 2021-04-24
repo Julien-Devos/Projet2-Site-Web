@@ -8,9 +8,9 @@
         <canvas id="line-chart" width="1600" height="700"></canvas>
         <script>
             var css = getComputedStyle(document.body)
-            var fCol = css.getPropertyValue('--fColB_dark')
-            var jCol = css.getPropertyValue('--jColB_dark')
-            var dCol = css.getPropertyValue('--dColB_dark')
+            var fCol = css.getPropertyValue('--fColB')
+            var jCol = css.getPropertyValue('--jColB')
+            var dCol = css.getPropertyValue('--dColB')
             var vCol = css.getPropertyValue('--vColB')
             var tCol = css.getPropertyValue('--tCol')
             var lCol = css.getPropertyValue('--lCol')
@@ -85,9 +85,8 @@
                     },
                     title: {
                         display: true,
-                        text: "Graphique des taux de femelles, de jumeaux et de morts prématurés",
+                        text: "Graphique des taux de femelles, de jumeaux, de morts prématurés et du nombre de velages par famille",
                         fontColor: tCol
-
                     },
                     legend: {
                         labels: {
