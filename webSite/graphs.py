@@ -115,30 +115,36 @@ def figure_5():
         sexe, mere_id, date_naiss, nom, mort_ne, decede = donnee[0], donnee[1], donnee[2], donnee[3], donnee[4], donnee[5]
         if nom not in d:
             if sexe == 'F':
-                d[nom] = [1, 0, [(mere_id, date_naiss)], 0, mort_ne + decede]
+                d[nom] = [1, 0, [(mere_id, date_naiss)], 0, mort_ne + decede, 1, 0]
             elif sexe == 'M':
-                d[nom] = [0, 1, [(mere_id, date_naiss)], 0, mort_ne + decede]
+                d[nom] = [0, 1, [(mere_id, date_naiss)], 0, mort_ne + decede, 1, 0]
         else:
             if sexe == 'F':
                 d[nom][0] += 1
             elif sexe == 'M':
                 d[nom][1] += 1
             if mere_id == d[nom][2][0] and date_naiss == d[nom][2][1]:
-                d[nom][3] += 1
+                if d[nom][6] == 0:
+                    d[nom][3] = 2
+                    d[nom][6] += 1
+                else:
+                    d[nom][3] += 1
             else:
                 d[nom][2] = (mere_id, date_naiss)
             d[nom][4] += mort_ne + decede
+            d[nom][5] += 1
 
     d_2 = {}
     for i in d.items():
-        d_2[i[0]] = [round(((i[1][0] / (i[1][0]+i[1][1]))*100)), round(((i[1][3] / (i[1][0]+i[1][1]))*100)), round(((i[1][4] / (i[1][0]+i[1][1]))*100))]
+        d_2[i[0]] = [round(((i[1][0] / i[1][5])*100)), round(((i[1][3] / i[1][5])*100)), round(((i[1][4] / i[1][5])*100)), i[1][5]]
         d_2[i[0]].append((d_2[i[0]][0]+d_2[i[0]][1]+d_2[i[0]][2]))
     d_2 = {k: v for k, v in sorted(d_2.items(), key=lambda item: item[1][3], reverse=False)}
 
-    data_list = [[], [], [], []]
+    data_list = [[], [], [], [], []]
     for i in d_2.items():
         data_list[0].append(i[0])
         data_list[1].append(i[1][0])
         data_list[2].append(i[1][1])
         data_list[3].append(i[1][2])
+        data_list[4].append(i[1][3])
     return render_template('figure_5.html', data=data_list,style=stylesheet)

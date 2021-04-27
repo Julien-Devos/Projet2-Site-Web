@@ -24,7 +24,7 @@ données provenant d'une DataBase pour en faire des visualisations
   
     ```python
     $ set FLASK_APP=webSite
-    $ flask init-db
+    $ flask create-db
     $ flask run
     ```
     

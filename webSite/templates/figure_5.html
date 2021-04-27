@@ -15,6 +15,7 @@
             var fCol = css.getPropertyValue('--fColB')
             var jCol = css.getPropertyValue('--jColB')
             var dCol = css.getPropertyValue('--dColB')
+            var vCol = css.getPropertyValue('--vColB')
             var tCol = css.getPropertyValue('--tCol')
             var lCol = css.getPropertyValue('--lCol')
             var xGCol = css.getPropertyValue('--xGCol')
@@ -26,6 +27,7 @@
             var taux_fem = {{ data[1] | safe }}
             var taux_jum = {{ data[2] | safe }}
             var dead = {{ data[3] | safe }}
+            var n_velages = {{ data[4] | safe }}
 
             var ctx = document.getElementById('line-chart');
             var stackedLine = new Chart(ctx, {
@@ -49,6 +51,12 @@
                             label: "Taux de morts prématurés",
                             data: dead,
                             borderColor: dCol,
+                            fill: false
+                        },
+                        {
+                            label: "Nombre de velages",
+                            data: n_velages,
+                            borderColor: vCol,
                             fill: false
                         }
                     ]
@@ -81,9 +89,8 @@
                     },
                     title: {
                         display: true,
-                        text: "Graphique des taux de femelles, de jumeaux et de morts prématurés",
+                        text: "Graphique des taux de femelles, de jumeaux, de morts prématurés et du nombre de velages par famille",
                         fontColor: tCol
-
                     },
                     legend: {
                         labels: {
