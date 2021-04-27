@@ -37,7 +37,49 @@ def figure1_1():
 
 @bp.route('/figure3_1')
 def figure3_1():
-    return render_template('figure3_1.html',style=stylesheet)
+    db = get_db()
+
+    data_from_db = []
+    for dcd in db.execute('SELECT animaux.mort_ne, velages.date FROM velages, '
+                                 'animaux_velages, animaux WHERE animaux_velages.velage_id = velages.id and '
+                                 'animaux_velages.animal_id = animaux.id ORDER BY velages.id'):
+        data_from_db.append(dcd)
+
+    #print(data_from_db[1][1])
+    data_3 = [[] for i in range(1,13)]
+    for i in range(len(data_from_db)) :
+        new_date = data_from_db[i][1].split("/")
+        #print(new_date)
+        if int(new_date[1]) == 1:
+            data_3[0].append(data_from_db[i][0])
+        if int(new_date[1]) == 2:
+            data_3[1].append(data_from_db[i][0])
+        if int(new_date[1]) == 3:
+            data_3[2].append(data_from_db[i][0])
+        if int(new_date[1]) == 4:
+            data_3[3].append(data_from_db[i][0])
+        if int(new_date[1]) == 5:
+            data_3[4].append(data_from_db[i][0])
+        if int(new_date[1]) == 6:
+            data_3[5].append(data_from_db[i][0])
+        if int(new_date[1]) == 7:
+            data_3[6].append(data_from_db[i][0])
+        if int(new_date[1]) == 8:
+            data_3[7].append(data_from_db[i][0])
+        if int(new_date[1]) == 9:
+            data_3[8].append(data_from_db[i][0])
+        if int(new_date[1]) == 10:
+            data_3[9].append(data_from_db[i][0])
+        if int(new_date[1]) == 11:
+            data_3[10].append(data_from_db[i][0])
+        if int(new_date[1]) == 12:
+            data_3[11].append(data_from_db[i][0])
+
+    for i in range(len(data_3)):
+        data_3[i] = sum(data_3[i])
+    print(data_3)
+
+    return render_template('figure3_1.html',style=stylesheet, data_3=data_3)
 
 
 @bp.route('/figure3_2')
