@@ -40,4 +40,5 @@ def phase(date):
    return phasename
 
 if __name__=="__main__":
-   print(phase(datetime.datetime(2021,4,16)))
+   for i in range(1,30):
+      print(phase(datetime.datetime(2021,4,i)))

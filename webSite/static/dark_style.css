@@ -64,7 +64,10 @@ html{
     margin-top: 100px;
     color: #d1cac5;
 }
-
+#figures{
+    margin-top: 50px;
+    font-size: 50px;
+}
 
 /* Bouton pour changer de theme */
 .theme_bulb{

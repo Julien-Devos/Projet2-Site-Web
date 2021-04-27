@@ -6,6 +6,12 @@
 
 {% block content %}
     <body>
+        <h1 class="titre" id="figures">Figure 3.2</h1>
+        <div class="box">
+            <p class="paragraphe" id="figuresp">Cette figure permet de savoir si une famille a un taux de morts nés ou décès prématurés plus élevé qu'une autre.
+                Pour ce faire, il fallait mettre toutes les familles sur un même pied d'égalité pour pouvoir les comparer correctement. C'est pour ça que chaque
+                statistique est calculé en fonction du nombre total de velages que compte la famille au total.</p>
+        </div>
         <p>{{vivants}}</p>
         <canvas id="bar-chart" width="1600" height="700"></canvas>
             <script>

@@ -6,6 +6,10 @@
 
 {% block content %}
     <body>
+        <h1 class="titre" id="figures">Figure 1</h1>
+        <div class="box">
+            <p class="paragraphe" id="p1">Test de paragraphe</p>
+        </div>
         <canvas id="bar-chart" width="1600" height="700"></canvas>
             <script>
                 var css = getComputedStyle(document.body)
@@ -27,14 +31,14 @@
                     type: 'radar',
                     data: {
                         labels: [
-                            'New Moon',
-                            'Waxing Crescent',
-                            'First Quarter',
-                            'Waxing Gibbous',
-                            'Full Moon',
-                            'Waning Gibbous',
-                            'Last Quarter',
-                            'Waning Crescent',
+                            "Nouvelle Lune",
+                            "Premier Croissant",
+                            "Premier Quartier",
+                            "Gibbeuse Croissante",
+                            "Pleine Lune",
+                            "Gibbeuse Décroissante",
+                            "Dernier Quartier",
+                            "Dernier Croissant"
                           ],
                         datasets: [
                         {

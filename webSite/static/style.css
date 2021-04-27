@@ -63,6 +63,10 @@ html{
     margin-top: 100px;
     color: #221f1d;
 }
+#figures{
+    margin-top: 50px;
+    font-size: 50px;
+}
 
 
 /* Bouton pour changer de theme */
@@ -153,8 +157,12 @@ html{
     text-align: justify;
 }
 #p2{
-   margin-top: 50px;
+    margin-top: 50px;
     text-align: justify;
+}
+#figuresp{
+    margin-top: 50px;
+    text-align: center;
 }
 
 
