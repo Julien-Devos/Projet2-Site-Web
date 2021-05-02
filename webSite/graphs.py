@@ -149,7 +149,6 @@ def figure4_2():
     for info in infor:
         day, month, year = int(info[3].split('/')[0]), int(info[3].split('/')[1]), int(info[3].split('/')[2])
         mort_ne, decede, nom, d, complications = info[0], info[1], info[2], date(year, month, day), info[3]
-        print(info)
     return render_template('figure4_2.html',style=stylesheet)
 
 
