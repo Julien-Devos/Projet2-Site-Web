@@ -8,16 +8,16 @@
     <body>
         <h1 class="titre" id="figures">Figure 4.2</h1>
         <div class="box">
-            <p class="paragraphe" id="p1">pas encore fait</p>
+            <p class="paragraphe" id="p1">decès prématurés</p>
         </div>
         <p>{{vivants}}</p>
-        <canvas id="bar-chart" width="1600" height="700"></canvas>
+        <div class="figure" id="fig4.2">
+            <canvas id="bar-chart" width="1600" height="700"></canvas>
+        </div>
             <script>
                 var css = getComputedStyle(document.body)
                 var vCol = css.getPropertyValue('--vColJ')
                 var vHovCol = css.getPropertyValue('--vHovColJ')
-                var mCol = css.getPropertyValue('--mColJ')
-                var mHovCol = css.getPropertyValue('--mHovColJ')
                 var dCol = css.getPropertyValue('--dColJ')
                 var dHovCol = css.getPropertyValue('--dHovColJ')
                 var tCol = css.getPropertyValue('--tCol')
