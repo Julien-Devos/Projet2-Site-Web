@@ -140,16 +140,6 @@ def figure3_2():
 @bp.route('/figure4_2')
 def figure4_2():
     db = get_db()
-    infor= []
-    for infos in db.execute('SELECT animaux.mort_ne, animaux.decede, familles.nom, velages.date, complications.complication FROM velages, '
-                                 'animaux_velages, animaux, familles, complications WHERE animaux_velages.velage_id = velages.id and '
-                                 'animaux_velages.animal_id = animaux.id  and velages_complications.velages_id = velages.id and velages_complications.complication_id = complications.id and familles.id = animaux.famille_id  ORDER BY velages.id'):
-        infor.append(infos)
-    dico= {}
-    for info in infor:
-        day, month, year = int(info[3].split('/')[0]), int(info[3].split('/')[1]), int(info[3].split('/')[2])
-        mort_ne, decede, nom, d, complications = info[0], info[1], info[2], date(year, month, day), info[3]
-    return render_template('figure4_2.html',style=stylesheet)
 
 
 @bp.route('/figure_5')
