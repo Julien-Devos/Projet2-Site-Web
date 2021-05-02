@@ -23,7 +23,10 @@
                 quelle famille avec une plus grande population maintien des taux faibles.
             </p>
         </div>
-        <canvas id="line-chart" width="1600" height="700"></canvas>
+        <div class="figure" id="fig3.2">
+            <canvas id="line-chart" width="100%" height="100%"></canvas>
+        </div>
+<!--        <canvas id="line-chart" width="1600" height="700"></canvas>-->
         <script>
             var css = getComputedStyle(document.body)
             var fCol = css.getPropertyValue('--fColB')
@@ -77,6 +80,7 @@
                 },
                 options: {
                     responsive: true,
+                    maintainAspectRatio: false,
                     scales: {
                         y: {
                             stacked: true

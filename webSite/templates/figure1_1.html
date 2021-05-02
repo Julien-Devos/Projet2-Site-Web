@@ -10,7 +10,9 @@
         <div class="box">
             <p class="paragraphe" id="p1">Test de paragraphe</p>
         </div>
-        <canvas id="bar-chart" width="1600" height="700"></canvas>
+        <div class="figure" id="fig1.1">
+            <canvas id="bar-chart" width="100%" height="100%"></canvas>
+        </div>
             <script>
                 var css = getComputedStyle(document.body)
                 var bCol = css.getPropertyValue('--bColB')
@@ -69,6 +71,7 @@
                             }
                         },
                         responsive: true,
+                        maintainAspectRatio: false,
                         scale: {
                             pointLabels:{
                                fontColor:lCol,

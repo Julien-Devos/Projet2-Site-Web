@@ -44,7 +44,6 @@ def figure3_1():
                                  'animaux_velages, animaux WHERE animaux_velages.velage_id = velages.id and '
                                  'animaux_velages.animal_id = animaux.id ORDER BY velages.id'):
         data_from_db.append(dcd)
-
     #print(data_from_db[1][1])
     data_3 = [[] for i in range(1,13)]
     for i in range(len(data_from_db)) :
@@ -142,10 +141,9 @@ def figure4_2():
     db = get_db()
     infor= []
     for infos in db.execute('SELECT animaux.decede, familles.nom, velages.date, complications.complication FROM velages, '
-                                 'animaux_velages, animaux, familles, complications WHERE animaux_velages.velage_id = velages.id and '
-                                 'animaux_velages.animal_id = animaux.id  and velages_complications.velages_id = velages.id'
-                                 'and velages_complications.complication_id = complications.id'
-                                 'and familles.id = animaux.famille_id  ORDER BY velages.id'):
+                                 'animaux_velages, animaux, familles, complications, velages_complications WHERE animaux_velages.velage_id = velages.id and '
+                                 'animaux_velages.animal_id = animaux.id and velages_complications.velage_id = velages.id '
+                                 'and complications.id = velages_complications.complication_id and familles.id = animaux.famille_id ORDER BY velages.id'):
         infor.append(infos)
     dico= {}
     for info in infor:
@@ -183,7 +181,7 @@ def figure4_2():
         data_liste[2].append(dico[nom][1])
         data_liste[3].append(dico[nom][2])
             
-    return render_template('figure4_2.html', data = data_liste, style=stylesheet)
+    return render_template('figure4_2.html', data=data_liste, style=stylesheet)
 
 @bp.route('/figure_5')
 def figure_5():

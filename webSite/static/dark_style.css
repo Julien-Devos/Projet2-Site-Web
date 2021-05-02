@@ -162,6 +162,14 @@ html{
     text-align: justify;
 }
 
+.figure{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1fr;
+  height: 700px;
+}
+
 
 /*Nav Bar*/
 

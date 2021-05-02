@@ -6,7 +6,9 @@
 
 {% block content %}
     <body>
-        <canvas id="bar-chart" width="1600" height="700"></canvas>
+        <div class="figure" id="fig3.1">
+            <canvas id="bar-chart" width="100%" height="100%"></canvas>
+        </div>
             <script>
                 var css = getComputedStyle(document.body)
                 var vCol = css.getPropertyValue('--vColJ')
@@ -68,6 +70,7 @@
                             }
                         },
                         responsive: true,
+                        maintainAspectRatio: false,
                         tooltips: {
                             mode: 'label',
                         },
