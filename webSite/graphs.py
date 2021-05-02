@@ -151,7 +151,7 @@ def figure4_2():
     for info in infor:
         day, month, year = int(info[2].split('/')[0]), int(info[2].split('/')[1]), int(info[2].split('/')[2])
         decede, nom, d, complications = info[0], info[1], date(year, month, day), info[3]
-         if nom not in dico:
+        if nom not in dico:
             if decede == 0:
                 dico[nom] = [1, 0, d, d]
             else:
@@ -166,7 +166,7 @@ def figure4_2():
             else:
                 dico[nom][1] += 1
            
-     for data in dico.keys():
+    for data in dico.keys():
         dico[data][2] = (dico[data][3] - dico[data][2]).days / 365
         dico[data].pop()
         if dico[data][2] != 0:
