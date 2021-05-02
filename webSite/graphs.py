@@ -174,7 +174,6 @@ def figure4_2():
             dico[data][1] = round(dico[data][1] / dico[data][2], 4)
         dico[data].append(dico[data][0] + dico[data][1])
 
-    # Sort the data
     dico = {k: v for k, v in sorted(dico.items(), key=lambda item: item[1][4], reverse=True)}
 
     data_liste = [[], [], [], []]
