@@ -138,50 +138,50 @@ def figure3_2():
 
 @bp.route('/figure4_2')
 def figure4_2():
-    db = get_db()
-    infor= []
-    for infos in db.execute('SELECT animaux.decede, familles.nom, velages.date, complications.complication FROM velages, '
-                                 'animaux_velages, animaux, familles, complications, velages_complications WHERE animaux_velages.velage_id = velages.id and '
-                                 'animaux_velages.animal_id = animaux.id and velages_complications.velage_id = velages.id '
-                                 'and complications.id = velages_complications.complication_id and familles.id = animaux.famille_id ORDER BY velages.id'):
-        infor.append(infos)
-    dico= {}
-    for info in infor:
-        day, month, year = int(info[2].split('/')[0]), int(info[2].split('/')[1]), int(info[2].split('/')[2])
-        decede, nom, d, complications = info[0], info[1], date(year, month, day), info[3]
-        if nom not in dico:
-            if decede == 0:
-                dico[nom] = [1, 0, d, d]
-            else:
-                dico[nom] = [0, decede, d, d]
-        else:
-            if d < dico[nom][2]:
-                dico[nom][2] = d
-            elif d > dico[nom][3]:
-                dico[nom][3] = d
-            if decede == 0:
-                dico[nom][0] += 1
-            else:
-                dico[nom][1] += 1
-           
-    for data in dico.keys():
-        dico[data][2] = (dico[data][3] - dico[data][2]).days / 365
-        dico[data].pop()
-        if dico[data][2] != 0:
-            dico[data][0] = round(dico[data][0] / dico[data][2], 4)
-            dico[data][1] = round(dico[data][1] / dico[data][2], 4)
-        dico[data].append(dico[data][0] + dico[data][1])
-
-    dico = {k: v for k, v in sorted(dico.items(), key=lambda item: item[1][4], reverse=True)}
-
-    data_liste = [[], [], [], []]
-    for nom in dico:
-        data_liste[0].append(nom)
-        data_liste[1].append(dico[nom][0])
-        data_liste[2].append(dico[nom][1])
-        data_liste[3].append(dico[nom][2])
+    # db = get_db()
+    # infor= []
+    # for infos in db.execute('SELECT animaux.decede, familles.nom, velages.date, complications.complication FROM velages, '
+    #                              'animaux_velages, animaux, familles, complications, velages_complications WHERE animaux_velages.velage_id = velages.id and '
+    #                              'animaux_velages.animal_id = animaux.id and velages_complications.velage_id = velages.id '
+    #                              'and complications.id = velages_complications.complication_id and familles.id = animaux.famille_id ORDER BY velages.id'):
+    #     infor.append(infos)
+    # dico= {}
+    # for info in infor:
+    #     day, month, year = int(info[2].split('/')[0]), int(info[2].split('/')[1]), int(info[2].split('/')[2])
+    #     decede, nom, d, complications = info[0], info[1], date(year, month, day), info[3]
+    #     if nom not in dico:
+    #         if decede == 0:
+    #             dico[nom] = [1, 0, d, d]
+    #         else:
+    #             dico[nom] = [0, decede, d, d]
+    #     else:
+    #         if d < dico[nom][2]:
+    #             dico[nom][2] = d
+    #         elif d > dico[nom][3]:
+    #             dico[nom][3] = d
+    #         if decede == 0:
+    #             dico[nom][0] += 1
+    #         else:
+    #             dico[nom][1] += 1
+    #
+    # for data in dico.keys():
+    #     dico[data][2] = (dico[data][3] - dico[data][2]).days / 365
+    #     dico[data].pop()
+    #     if dico[data][2] != 0:
+    #         dico[data][0] = round(dico[data][0] / dico[data][2], 4)
+    #         dico[data][1] = round(dico[data][1] / dico[data][2], 4)
+    #     dico[data].append(dico[data][0] + dico[data][1])
+    #
+    # dico = {k: v for k, v in sorted(dico.items(), key=lambda item: item[1][4], reverse=True)}
+    #
+    # data_liste = [[], [], [], []]
+    # for nom in dico:
+    #     data_liste[0].append(nom)
+    #     data_liste[1].append(dico[nom][0])
+    #     data_liste[2].append(dico[nom][1])
+    #     data_liste[3].append(dico[nom][2])
             
-    return render_template('figure4_2.html', data=data_liste, style=stylesheet)
+    return render_template('figure4_2.html',data=" " , style=stylesheet)
 
 @bp.route('/figure_5')
 def figure_5():

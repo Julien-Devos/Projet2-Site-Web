@@ -148,18 +148,12 @@ html{
     font-family: 'Open-sans',sans-serif;
     color: #221f1d;
     font-size: 20px;
+    margin-top: 50px;
+    text-align: justify;
 }
 #intro{
     margin-top: 50px;
     text-align: center;
-}
-#p1{
-    margin-top: 50px;
-    text-align: justify;
-}
-#p2{
-    margin-top: 50px;
-    text-align: justify;
 }
 #figuresp{
     margin-top: 50px;

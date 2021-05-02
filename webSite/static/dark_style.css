@@ -148,18 +148,11 @@ html{
     font-family: 'Open-sans',sans-serif;
     color: #d1cac5;
     font-size: 20px;
+    margin-top: 50px;
+    text-align: justify;
 }
 #intro{
-    margin-top: 50px;
     text-align: center;
-}
-#p1{
-    margin-top: 50px;
-    text-align: justify;
-}
-#p2{
-   margin-top: 50px;
-    text-align: justify;
 }
 
 .figure{

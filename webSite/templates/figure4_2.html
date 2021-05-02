@@ -8,96 +8,95 @@
     <body>
         <h1 class="titre" id="figures">Figure 4.2</h1>
         <div class="box">
-            <p class="paragraphe" id="p1">pas encore fait</p>
+            <p class="paragraphe">Afin de réduire et comprendre le taux de décès prématurés chez les veaux, nous utilisons un graphe "stacked barplot".  Ce dernier reflète, pour chaque famille (axe des x), la proportion de veaux vivants et de veaux décédésprématurément par rapport à une unité de temps. Les décès prématurés sont ensuite subdivisés en causes.</p>
         </div>
-        <p>{{vivants}}</p>
-        <canvas id="bar-chart" width="1600" height="700"></canvas>
-            <script>
-                var css = getComputedStyle(document.body)
-                var vCol = css.getPropertyValue('--vColJ')
-                var vHovCol = css.getPropertyValue('--vHovColJ')
-                var mCol = css.getPropertyValue('--mColJ')
-                var mHovCol = css.getPropertyValue('--mHovColJ')
-                var dCol = css.getPropertyValue('--dColJ')
-                var dHovCol = css.getPropertyValue('--dHovColJ')
-                var tCol = css.getPropertyValue('--tCol')
-                var lCol = css.getPropertyValue('--lCol')
-                var xGCol = css.getPropertyValue('--xGCol')
-                var xValCol = css.getPropertyValue('--xValCol')
-                var yGCol = css.getPropertyValue('--yGCol')
-                var yValCol = css.getPropertyValue('--yValCol')
+<!--        <canvas id="bar-chart" width="1600" height="700"></canvas>-->
+<!--            <script>-->
+<!--                var css = getComputedStyle(document.body)-->
+<!--                var vCol = css.getPropertyValue('&#45;&#45;vColJ')-->
+<!--                var vHovCol = css.getPropertyValue('&#45;&#45;vHovColJ')-->
+<!--                var mCol = css.getPropertyValue('&#45;&#45;mColJ')-->
+<!--                var mHovCol = css.getPropertyValue('&#45;&#45;mHovColJ')-->
+<!--                var dCol = css.getPropertyValue('&#45;&#45;dColJ')-->
+<!--                var dHovCol = css.getPropertyValue('&#45;&#45;dHovColJ')-->
+<!--                var tCol = css.getPropertyValue('&#45;&#45;tCol')-->
+<!--                var lCol = css.getPropertyValue('&#45;&#45;lCol')-->
+<!--                var xGCol = css.getPropertyValue('&#45;&#45;xGCol')-->
+<!--                var xValCol = css.getPropertyValue('&#45;&#45;xValCol')-->
+<!--                var yGCol = css.getPropertyValue('&#45;&#45;yGCol')-->
+<!--                var yValCol = css.getPropertyValue('&#45;&#45;yValCol')-->
 
 
-                var vivants = {{data[1] | safe}}
-                var decede = {{data[2] | safe}}
-                var familles = {{data[0] | safe}}
-                var bar_ctx = document.getElementById('bar-chart');
-                var bar_chart = new Chart(bar_ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: familles,
-                        datasets: [
-                        {
-                            label: 'Vivants',
-                            data: vivants,
-                            backgroundColor: vCol,
-                            hoverBackgroundColor: vHovCol,
-                            hoverBorderWidth: 0
-                        },
-                        {
-                            label: 'Décès prématurés',
-                            data: decede,
-                            backgroundColor: dCol,
-                            hoverBackgroundColor: dHovCol,
-                            hoverBorderWidth: 0
-                        },
-                        ]
-                    },
-                       options: {
-                        layout: {
-                          padding: 25
-                        },
-                        title: {
-                            display: true,
-                            text: "Taux d'animaux décédés prématurément par an et par famille",
-                            fontColor: tCol
+<!--                var vivants = {{data[1] | safe}}-->
+<!--                var decede = {{data[2] | safe}}-->
+<!--                var familles = {{data[0] | safe}}-->
+<!--                var bar_ctx = document.getElementById('bar-chart');-->
+<!--                var bar_chart = new Chart(bar_ctx, {-->
+<!--                    type: 'bar',-->
+<!--                    data: {-->
+<!--                        labels: familles,-->
+<!--                        datasets: [-->
+<!--                        {-->
+<!--                            label: 'Vivants',-->
+<!--                            data: vivants,-->
+<!--                            backgroundColor: vCol,-->
+<!--                            hoverBackgroundColor: vHovCol,-->
+<!--                            hoverBorderWidth: 0-->
+<!--                        },-->
+<!--                        {-->
+<!--                            label: 'Décès prématurés',-->
+<!--                            data: decede,-->
+<!--                            backgroundColor: dCol,-->
+<!--                            hoverBackgroundColor: dHovCol,-->
+<!--                            hoverBorderWidth: 0-->
+<!--                        },-->
+<!--                        ]-->
+<!--                    },-->
+<!--                       options: {-->
+<!--                        layout: {-->
+<!--                          padding: 25-->
+<!--                        },-->
+<!--                        title: {-->
+<!--                            display: true,-->
+<!--                            text: "Taux d'animaux décédés prématurément par an et par famille",-->
+<!--                            fontColor: tCol-->
 
-                        },
-                        legend: {
-                            labels: {
-                                fontColor: lCol
-                            }
-                        },
-                        responsive: true,
-                        tooltips: {
-                            mode: 'label',
-                        },
-                        scales: {
-                          xAxes: [{
-                              gridLines: {
-                                  color: xGCol
-                                },
-                              ticks: {
-                                  fontColor: xValCol
-                              },
-                              barPercentage: 0.4,
-                              stacked: true,
-                              beginAtZero: true
-                            }],
-                          yAxes: [{
-                              gridLines: {
-                                    color: yGCol
-                                },
-                              ticks: {
-                                  fontColor: yValCol
-                              },
-                              stacked: true,
-                              beginAtZero: true
-                            }],
-                        },
-                    },
-                   }
-                );
-            </script>
+<!--                        },-->
+<!--                        legend: {-->
+<!--                            labels: {-->
+<!--                                fontColor: lCol-->
+<!--                            }-->
+<!--                        },-->
+<!--                        responsive: true,-->
+<!--                        tooltips: {-->
+<!--                            mode: 'label',-->
+<!--                        },-->
+<!--                        scales: {-->
+<!--                          xAxes: [{-->
+<!--                              gridLines: {-->
+<!--                                  color: xGCol-->
+<!--                                },-->
+<!--                              ticks: {-->
+<!--                                  fontColor: xValCol-->
+<!--                              },-->
+<!--                              barPercentage: 0.4,-->
+<!--                              stacked: true,-->
+<!--                              beginAtZero: true-->
+<!--                            }],-->
+<!--                          yAxes: [{-->
+<!--                              gridLines: {-->
+<!--                                    color: yGCol-->
+<!--                                },-->
+<!--                              ticks: {-->
+<!--                                  fontColor: yValCol-->
+<!--                              },-->
+<!--                              stacked: true,-->
+<!--                              beginAtZero: true-->
+<!--                            }],-->
+<!--                        },-->
+<!--                    },-->
+<!--                   }-->
+<!--                );-->
+<!--            </script>-->
     </body>
 {% endblock %}
