@@ -42,6 +42,13 @@ html{
     background-color: #f8fbfc;
 }
 
+.logo404{
+  width: 230px;
+  height: 230px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .credits{
   display: flex;
   flex-wrap: nowrap;
@@ -116,23 +123,24 @@ html{
 }
 .btn{
   background-color: #fff; /* Green */
-  border: 2px solid #072c4f;
-  color: #000;
+  border: 2px solid #166088;
+  color: #221f1d;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   flex-wrap: nowrap;
+  font-family: sans-serif;
   font-size: 16px;
   position: fixed;
   top: 50%;
   margin-left: 45%;
   margin-right: auto;
+  border-radius: 25px;
 }
 .btn:active, .btn:hover{
   color: white;
-  border: solid 0px;
-  background-color: #072c4f;
+  background-color: #14567a;
 }
 
 

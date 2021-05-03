@@ -3,9 +3,9 @@ import os, git
 
 
 def styleSheet():
-    stylesheet = "static/style.css"
+    stylesheet = "/static/style.css"
     if request.cookies.get('darktheme') == 'True':
-        stylesheet = "static/dark_style.css"
+        stylesheet = "/static/dark_style.css"
     return stylesheet
 
 def create_app(test_config=None):
