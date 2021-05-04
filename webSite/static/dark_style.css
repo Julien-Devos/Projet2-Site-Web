@@ -50,15 +50,14 @@ html{
 }
 
 .credits{
-  color: #d1cac5;
   display: flex;
   flex-wrap: nowrap;
   text-align: center;
   font-family: 'Roboto',sans-serif;
-  filter: opacity(50%);
   justify-content: center;
   margin-top: 50px;
   font-size: 14px;
+  color: rgba(209, 202, 197, 0.5);
 }
 
 .titre{
@@ -228,7 +227,10 @@ a.active,a.not-active:hover{
 #check{
   display: none;
 }
-@media (max-width: 952px){
+@media (max-width: 1000px){
+  .theme_bulb{
+    margin-left: 93%;
+  }
   .logo{
     width: 70px;
     height: 70px;
@@ -240,15 +242,21 @@ a.active,a.not-active:hover{
     font-size: 16px;
   }
 }
-@media (max-width: 858px){
+@media (max-width: 950px){
+  .theme_bulb{
+    margin-left: 80%;
+  }
   .checkbtn{
     display: block;
+  }
+  .titre{
+    font-size: 50px;
   }
   ul{
     position: fixed;
     width: 100%;
     height: 100vh;
-    background: #216199;
+    background: #484850;
     top: 80px;
     left: -100%;
     text-align: center;
@@ -264,7 +272,7 @@ a.active,a.not-active:hover{
   }
   a.active,a.not-active{
     background: none;
-    color: #072c4f;
+    color: #f8fbfc;
   }
   #check:checked ~ ul{
     left: 0;

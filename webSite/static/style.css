@@ -23,6 +23,36 @@
   --baColB: rgba(241, 103, 241,0.2);
   --baHovColB: rgba(198, 68, 198, 0.2);
 }
+@font-face {
+font-family: 'Segoe UI Regular';
+font-style: normal;
+font-weight: normal;
+src: local('Segoe UI Regular'), url('\Fonts\Segoe UI.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Segoe UI Italic';
+font-style: normal;
+font-weight: normal;
+src: local('Segoe UI Italic'), url('\Fonts\Segoe UI Italic.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Segoe UI Bold';
+font-style: normal;
+font-weight: normal;
+src: local('Segoe UI Bold'), url('\Fonts\Segoe UI Bold.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Segoe UI Bold Italic';
+font-style: normal;
+font-weight: normal;
+src: local('Segoe UI Bold Italic'), url('\Fonts\Segoe UI Bold Italic.woff') format('woff');
+}
 
 @font-face {
     font-family: Roboto;
@@ -54,16 +84,16 @@ html{
   flex-wrap: nowrap;
   text-align: center;
   font-family: 'Roboto',sans-serif;
-  filter: opacity(50%);
   justify-content: center;
   margin-top: 50px;
   font-size: 14px;
+  color: rgba(34, 31, 29,0.5);
 }
 
 .titre{
     display: flex;
     flex-wrap: nowrap;
-    font-family: 'Roboto',sans-serif;
+    font-family: "Segoe UI",sans-serif;
     font-size: 60px;
     font-weight: bold;
     justify-content: center;
@@ -80,11 +110,7 @@ html{
 /* Bouton pour changer de theme */
 .theme_bulb{
   display: flex;
-  flex-wrap: nowrap;
-  flex: 1;
   position: absolute;
-  overflow: hidden;
-  object-fit: cover;
   width: 35px;
   margin-top: -58px;
   margin-left: 96%;
@@ -153,7 +179,7 @@ html{
 .paragraphe{
     /*background-color: rgba(0,255,0,0.2);*/
     width: 1500px;
-    font-family: 'Open-sans',sans-serif;
+    font-family: "Segoe UI",sans-serif;
     color: #221f1d;
     font-size: 20px;
     margin-top: 50px;
@@ -231,6 +257,9 @@ a.active,a.not-active:hover{
   display: none;
 }
 @media (max-width: 1000px){
+  .theme_bulb{
+    margin-left: 93%;
+  }
   .logo{
     width: 70px;
     height: 70px;
@@ -244,7 +273,7 @@ a.active,a.not-active:hover{
 }
 @media (max-width: 950px){
   .theme_bulb{
-    display: none;
+    margin-left: 80%;
   }
   .checkbtn{
     display: block;
