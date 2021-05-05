@@ -10,7 +10,6 @@ function switchTheme() {
         theme_style.setAttribute('href', '/static/styles/light_theme.css')
     }
 }
-
 // Source de la fonction suivante https://stackoverflow.com/a/5968306
 function getCookie(name) {
     var dc = document.cookie;
