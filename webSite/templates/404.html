@@ -5,19 +5,26 @@
     <link href={{style}} rel="stylesheet" id="pageTheme">
     <link href={{url_for('static',filename='styles/style.css')}} rel="stylesheet" id="pageStyle">
     <link rel="icon" href="{{url_for('static', filename='img/logo.ico')}}">
+    <!--  FONTS  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"> <!-- Open Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet"> <!-- Noto Sans TC -->
 </head>
 
 <html lang="en">
 <body>
     <div class="center">
-        <h1 id="error">4<img class="logo404" src="{{url_for('static',filename='img/logo404.png')}}">4</h1>
+        <h1 id="errorTitle">4<img class="logo404" src="{{url_for('static',filename='img/logo404.png')}}">4</h1>
     </div>
     <div class="center">
-        <h3 id="error-h3">Désolé,</h3>
+        <h1 id="errorT1">Désolé,</h1>
     </div>
     <div class="center">
-        <p id="error-p">cette page n'existe pas :(</p>
+        <a id="errorT2">cette page n'existe pas :(</a>
     </div>
-    <a class="btn" id="home" href="{{url_for('index')}}">Revenir à l'accueil</a>
+    <div class="btn-center">
+        <a class="btn" id="home" href="{{url_for('index')}}">Revenir à l'accueil</a>
+    </div>
 </body>
 </html>

@@ -17,7 +17,7 @@
 </head>
 <body>
     <nav>
-        <input type="checkbox" id="check">
+        <input type="checkbox" id="check" onclick="stopScroll()">
         <label for="check" class="checkbtn">
             <i class="fas fa-bars"></i>
         </label>
@@ -38,11 +38,9 @@
     </nav>
     {% block content %}{% endblock %}
 
-    <div style="position: relative;">
         <div class="flex-text">
             <h1 class="credits">© 2021 Groupe 1C-3 LINFO1102</h1>
         </div>
-    </div>
 
 </body>
 </html>

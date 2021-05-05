@@ -39,6 +39,7 @@ html{
     color: #d1cac5;
 }
 
+
 /* 404 page */
 .center{
   color: #ffffff;
@@ -52,7 +53,6 @@ html{
   color: #ffffff;
   background-color: #212226;
 }
-
 
 
 /*Nav Bar*/
@@ -70,12 +70,8 @@ a.active,a.not-active:hover{
 }
 
 
-@media (max-width: 950px){
+@media (max-width: 980px){
   ul{
     background: #484850;
   }
-  a.active,a.not-active{
-    color: #f8fbfc;
-  }
 }
-

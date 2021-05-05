@@ -25,17 +25,21 @@
 }
 
 html{
-    background-color: #f8fbfc;
+  background-color: #f8fbfc;
 }
 
 .credits{
   color: rgba(34, 31, 29,0.5);
 }
 
-.titre{
+.title{
+    color: #221f1d;
+}
+.paragraph{
     color: #221f1d;
 }
 
+/* 404 page */
 .btn{
   background-color: #fff; /* Green */
   border: 2px solid #166088;
@@ -44,9 +48,6 @@ html{
 .btn:active, .btn:hover{
   color: white;
   background-color: #14567a;
-}
-.paragraphe{
-    color: #221f1d;
 }
 
 
@@ -65,12 +66,8 @@ a.active,a.not-active:hover{
 }
 
 
-@media (max-width: 950px){
+@media (max-width: 980px){
   ul{
     background: #5c90ac;
   }
-  a.active,a.not-active{
-    color: #072c4f;
-  }
 }
-
