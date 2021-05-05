@@ -33,7 +33,7 @@
         <li><a {% if request.url_rule.endpoint == "graphs.figure3_2" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('graphs.figure3_2')}}">Figure 3.2</a></li>
         <li><a {% if request.url_rule.endpoint == "graphs.figure4_2" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('graphs.figure4_2')}}">Figure 4.2</a></li>
         <li><a {% if request.url_rule.endpoint == "graphs.figure_5" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('graphs.figure_5')}}">Figure 5</a></li>
-        <li><span class="theme-icon" onclick="changeThemeCookie();darkMode();"></span></li>
+        <li><span class="theme-icon" onclick="switchTheme();"></span></li>
        </ul>
     </nav>
     {% block content %}{% endblock %}

@@ -1,5 +1,14 @@
-function darkMode() {
-       document.location.reload();
+function switchTheme() {
+    changeThemeCookie();
+
+    var theme_style = document.getElementsByTagName("link")[0];
+
+    if (theme_style.getAttribute('href') === "/static/styles/light_theme.css") {
+        theme_style.setAttribute('href', '/static/styles/dark_theme.css')
+    }
+    else {
+        theme_style.setAttribute('href', '/static/styles/light_theme.css')
+    }
 }
 
 // Source de la fonction suivante https://stackoverflow.com/a/5968306
@@ -7,15 +16,15 @@ function getCookie(name) {
     var dc = document.cookie;
     var prefix = name + "=";
     var begin = dc.indexOf("; " + prefix);
-    if (begin == -1) {
+    if (begin === -1) {
         begin = dc.indexOf(prefix);
-        if (begin != 0) return null;
+        if (begin !== 0) return null;
     }
     else
     {
         begin += 2;
         var end = document.cookie.indexOf(";", begin);
-        if (end == -1) {
+        if (end === -1) {
         end = dc.length;
         }
     }
@@ -23,7 +32,7 @@ function getCookie(name) {
 }
 function changeThemeCookie() {
      var darkTheme = getCookie("darktheme");
-     if (darkTheme == "False") {
+     if (darkTheme === "False") {
          document.cookie = "darktheme=True"
      }
      else{
@@ -31,7 +40,7 @@ function changeThemeCookie() {
      }
 }
 function stopScroll() {
-    if (document.body.style.overflowY == "hidden"){
+    if (document.body.style.overflowY === "hidden"){
         document.body.style.overflowY = "visible"
     }
     else {
