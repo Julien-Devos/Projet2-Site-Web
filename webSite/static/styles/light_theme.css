@@ -1,0 +1,76 @@
+
+ /* Graphics colors */
+:root {
+  --background: #f8fbfc;
+  --tCol: #000;
+  --lCol: #000;
+  --xGCol: rgba(0, 0, 0, 0.1);
+  --xValCol: #000;
+  --yGCol: rgba(0, 0, 0, 0.1);
+  --yValCol: #000;
+  --fColB: #dda0dd;
+  --jColB: #ffdab9;
+  --dColB: #AFEEEE;
+  --vColB: #bbbfbb;
+  --baColB: rgba(241, 103, 241, 0.2);
+  --baHovColB: rgba(198, 68, 198, 0.2);
+}
+
+.theme-icon:before{
+  color: white;
+}
+.theme-icon:hover:before{
+  background: #14567a;
+  transition: .2s;
+}
+
+html{
+    background-color: #f8fbfc;
+}
+
+.credits{
+  color: rgba(34, 31, 29,0.5);
+}
+
+.titre{
+    color: #221f1d;
+}
+
+.btn{
+  background-color: #fff; /* Green */
+  border: 2px solid #166088;
+  color: #221f1d;
+}
+.btn:active, .btn:hover{
+  color: white;
+  background-color: #14567a;
+}
+.paragraphe{
+    color: #221f1d;
+}
+
+
+/*Nav Bar*/
+nav{
+  background: #166088;
+}
+nav ul li a{
+  color: #f8fbfc;
+}
+a.active,a.not-active:hover{
+  background: #14567a;
+}
+.checkbtn{
+  color: #f8fbfc;
+}
+
+
+@media (max-width: 950px){
+  ul{
+    background: #5c90ac;
+  }
+  a.active,a.not-active{
+    color: #072c4f;
+  }
+}
+

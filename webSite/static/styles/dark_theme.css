@@ -1,0 +1,81 @@
+
+ /* Graphics colors */
+:root{
+  --background: #36393f;
+  --tCol: #E0E5E9;
+  --lCol: #E0E5E9;
+  --xGCol: rgba(77, 77, 82, 0.5);
+  --xValCol: #E0E5E9;
+  --yGCol: rgba(77, 77, 82, 0.5);
+  --yValCol: #E0E5E9;
+  --fColB: #ee82ee;
+  --jColB: #9370db;
+  --dColB: #9932cc;
+  --vColB: #9ba09b;
+  --baColB: rgba(241, 103, 241,0.1);
+  --baHovColB: rgba(198, 68, 198, 0.1);
+}
+
+.theme-icon:before{
+  color: white;
+}
+.theme-icon:hover:before{
+  background: #212226;
+  transition: .2s;
+}
+
+html{
+    background-color: #36393f;
+}
+
+.credits{
+  color: rgba(209, 202, 197, 0.5);
+}
+
+.title{
+    color: #d1cac5;
+}
+.paragraph{
+    color: #d1cac5;
+}
+
+/* 404 page */
+.center{
+  color: #ffffff;
+}
+.btn{
+  background-color: #ffffff;
+  border: 2px solid #212226;
+  color: #000;
+}
+.btn:hover{
+  color: #ffffff;
+  background-color: #212226;
+}
+
+
+
+/*Nav Bar*/
+nav{
+  background: #2f3136;
+}
+nav ul li a{
+  color: #f8fbfc;
+}
+a.active,a.not-active:hover{
+  background: #212226;
+}
+.checkbtn{
+  color: #d1cac5;
+}
+
+
+@media (max-width: 950px){
+  ul{
+    background: #484850;
+  }
+  a.active,a.not-active{
+    color: #f8fbfc;
+  }
+}
+

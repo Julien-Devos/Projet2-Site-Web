@@ -1,103 +1,100 @@
 
- /* Graphics colors */
+/* Graphics colors */
 :root{
-  --background: #36393f;
   --vColJ: #2471A3;
   --vHovColJ: #2980B9;
   --mColJ: #17A589;
   --mHovColJ: #1ABC9C;
   --dColJ: #CB4335;
   --dHovColJ: #EC7063;
-  --tCol: #E0E5E9;
-  --lCol: #E0E5E9;
-  --xGCol: rgba(77, 77, 82, 0.5);
-  --xValCol: #E0E5E9;
-  --yGCol: rgba(77, 77, 82, 0.5);
-  --yValCol: #E0E5E9;
-  --fColB: #ee82ee;
-  --jColB: #9370db;
-  --dColB: #9932cc;
-  --vColB: #9ba09b;
   --bColB: #f167f1;
   --bHovColB: #c644c6;
-  --baColB: rgba(241, 103, 241,0.1);
-  --baHovColB: rgba(198, 68, 198, 0.1);
 }
 
+
+/* Fonts */
 @font-face {
-    font-family: Roboto;
-    src: url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-}
-@font-face {
-    font-family: Open-sans;
-    src: url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap")
+  font-family: 'icomoon';
+  src: url('/static/Fonts/icomoon.woff') format('woff');
 }
 @font-face {
-    font-family: Noto-sans;
-    src: url("https://fonts.googleapis.com/css2?family=Noto+Sans&family=Open+Sans&display=swap")
+  font-family: 'SegoeUI';
+  src: local('SegoeUI'), url('/static/Fonts/SegoeUI.woff') format('woff');
+}
+@font-face {
+  font-family: 'SegoeUI_Bold';
+  src: local('SegoeUI_Bold'), url('\Fonts\SegoeUI_Bold.woff') format('woff');
+}
+@font-face {
+  font-family: Open-sans;
+  src: url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+}
+@font-face {
+  font-family: Noto-sans;
+  src: url("https://fonts.googleapis.com/css2?family=Noto+Sans&family=Open+Sans&display=swap");
 }
 
 
-html{
-    background-color: #36393f;
+/* TEST ZONE */
+
+
+
+/* TEST ZONE */
+
+
+/* Texts */
+.flex-text{
+  font-family: 'Noto Sans TC', sans-serif;
+  margin: auto;
+  align-items: center;
+}
+.title{
+  font-weight: bold;
+  font-size: 60px;
+  text-align: center;
+  margin-top: 80px;
+}
+.paragraph{
+  font-size: 20px;
+  text-align: justify;
+  margin: 50px 200px auto;
+}
+.credits{
+  font-family: 'Roboto',sans-serif;
+  font-size: 14px;
+  text-align: center;
+  margin: 25px auto 25px auto;
 }
 
+
+/* Make Charts responsive */
+.figure{
+  display: block;
+  margin: 50px auto auto;
+  width: 1fr;
+  height: 700px;
+}
+
+
+/* Set the theme icon */
+.theme-icon:before{
+  font-family: "icomoon",sans-serif;
+  content: "\61";
+  border-radius: 25%;
+}
+
+
+/* 404 page */
 .logo404{
   width: 230px;
   height: 230px;
   margin-left: 10px;
   margin-right: 10px;
 }
-
-.credits{
-  display: flex;
-  flex-wrap: nowrap;
-  text-align: center;
-  font-family: 'Roboto',sans-serif;
-  justify-content: center;
-  margin-top: 50px;
-  font-size: 14px;
-  color: rgba(209, 202, 197, 0.5);
-}
-
-.titre{
-    display: flex;
-    flex-wrap: nowrap;
-    font-family: 'Roboto',sans-serif;
-    font-size: 60px;
-    font-weight: bold;
-    justify-content: center;
-    text-align: center;
-    margin-top: 100px;
-    color: #d1cac5;
-}
-#figures{
-    margin-top: 50px;
-    font-size: 50px;
-}
-
-/* Bouton pour changer de theme */
-.theme_bulb{
-  display: flex;
-  flex-wrap: nowrap;
-  flex: 1;
-  position: absolute;
-  overflow: hidden;
-  object-fit: cover;
-  width: 35px;
-  margin-top: -58px;
-  margin-left: 96%;
-}
-.theme_bulb:hover{
-  filter: opacity(50%);
-}
-
-/* 404 page */
 .center{
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
-  color: #ffffff;
 }
 #error {
   font-family: sans-serif;
@@ -122,15 +119,12 @@ html{
   margin-top: 230px;
 }
 .btn{
-  background-color: #ffffff; /* Green */
-  border: 2px solid #212226;
-  color: #000;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-family: sans-serif;
   flex-wrap: nowrap;
+  font-family: sans-serif;
   font-size: 16px;
   position: fixed;
   top: 50%;
@@ -138,39 +132,19 @@ html{
   margin-right: auto;
   border-radius: 25px;
 }
-.btn:hover{
-  color: #ffffff;
-  border: solid 0px;
-  background-color: #212226;
-}
 
 
-.box{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    /*background-color: rgba(255,0,0,0.2);*/
-}
-.paragraphe{
-    /*background-color: rgba(0,255,0,0.2);*/
-    width: 1500px;
-    font-family: 'Open-sans',sans-serif;
-    color: #d1cac5;
-    font-size: 20px;
-    margin-top: 50px;
-    text-align: justify;
-}
+
+
 #intro{
+    margin-top: 50px;
+    text-align: center;
+}
+#figuresp{
+    margin-top: 50px;
     text-align: center;
 }
 
-.figure{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 1fr;
-  height: 700px;
-}
 
 
 /*Nav Bar*/
@@ -183,7 +157,6 @@ html{
   box-sizing: border-box;
 }
 nav{
-  background: #2f3136;
   height: 80px;
   width: 100%;
 }
@@ -196,28 +169,31 @@ nav{
 }
 nav ul{
   float: right;
-  margin-right: 90px;
+  margin-right: 40px;
 }
 nav ul li{
   display: inline-block;
   line-height: 80px;
   margin: 0 4px;
 }
+nav ul li span{
+  vertical-align: middle;
+  font-size: 45px;
+  margin-left: 15px;
+}
 nav ul li a{
-  color: #f8fbfc;
   font-size: 17px;
   font-family: 'oto-sans', sans-serif;
   padding: 7px 13px;
   border-radius: 3px;
   text-transform: uppercase;
+  vertical-align: middle;
 }
 a.active,a.not-active:hover{
-  background: #212226;
   transition: .5s;
 }
 .checkbtn{
   font-size: 30px;
-  color: #d1cac5;
   float: right;
   line-height: 80px;
   margin-right: 40px;
@@ -256,7 +232,6 @@ a.active,a.not-active:hover{
     position: fixed;
     width: 100%;
     height: 100vh;
-    background: #484850;
     top: 80px;
     left: -100%;
     text-align: center;
@@ -272,7 +247,6 @@ a.active,a.not-active:hover{
   }
   a.active,a.not-active{
     background: none;
-    color: #f8fbfc;
   }
   #check:checked ~ ul{
     left: 0;
