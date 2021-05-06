@@ -1,19 +1,9 @@
-from flask import Blueprint,render_template
 from webSite.db_init import get_db
 from datetime import date,datetime
-from webSite.__init__ import styleSheet
 from . import moon
 
-bp = Blueprint('graphs', __name__)
 
-# On every reload check wich style to use
-@bp.before_request
-def before_request():
-    global stylesheet
-    stylesheet = styleSheet()
-
-@bp.route('/figure1_1')
-def figure1_1():
+def figure1():
     db = get_db()
 
     velages = []
@@ -32,11 +22,10 @@ def figure1_1():
         data.append(d[phaseCount])
     print(data)
 
-    return render_template('figure1_1.html',style=stylesheet,data=data)
+    return data
 
 
-@bp.route('/figure3_1')
-def figure3_1():
+def figure2():
     db = get_db()
 
     data_from_db = []
@@ -78,11 +67,10 @@ def figure3_1():
         data_3[i] = sum(data_3[i])
     print(data_3)
 
-    return render_template('figure3_1.html',style=stylesheet, data_3=data_3)
+    return data_3
 
 
-@bp.route('/figure3_2')
-def figure3_2():
+def figure3():
     db = get_db()
 
     velages = []
@@ -133,11 +121,10 @@ def figure3_2():
         data_lst[3].append(Data[nom][2])
         data_lst[4].append(Data[nom][4])
 
-    return render_template('figure3_2.html',data=data_lst,style=stylesheet)
+    return data_lst
 
 
-@bp.route('/figure4_2')
-def figure4_2():
+def figure4():
     # db = get_db()
     # infor= []
     # for infos in db.execute('SELECT animaux.decede, familles.nom, velages.date, complications.complication FROM velages, '
@@ -181,10 +168,10 @@ def figure4_2():
     #     data_liste[2].append(dico[nom][1])
     #     data_liste[3].append(dico[nom][2])
             
-    return render_template('figure4_2.html',data=" " , style=stylesheet)
+    return None
 
-@bp.route('/figure_5')
-def figure_5():
+
+def figure5():
     db = get_db()
     donnees = []
     for donnee in db.execute('SELECT animaux.sexe, velages.mere_id, velages.date, familles.nom, animaux.mort_ne, animaux.decede FROM velages, '
@@ -230,4 +217,5 @@ def figure_5():
         data_list[2].append(i[1][1])
         data_list[3].append(i[1][2])
         data_list[4].append(i[1][3])
-    return render_template('figure_5.html', data=data_list,style=stylesheet)
+
+    return data_list

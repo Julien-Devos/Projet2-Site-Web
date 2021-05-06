@@ -31,7 +31,7 @@
                 var yValCol = css.getPropertyValue('--yValCol')
 
 
-                var data = {{data_3 | safe}}
+                var data = {{data | safe}}
                 var bar_ctx = document.getElementById('bar-chart');
                 var bar_chart = new Chart(bar_ctx, {
                     type: 'bar',

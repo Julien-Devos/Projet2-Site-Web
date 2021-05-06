@@ -19,15 +19,6 @@
 }
 
 
-/* TEST ZONE */
-
-html{
-  overflow-y: visible;
-}
-
-/* TEST ZONE */
-
-
 /* Texts */
 .flex-text{
   font-family: 'Noto Sans TC', sans-serif;
@@ -275,7 +266,7 @@ a.active,a.not-active:hover{
   }
   .btn{
     padding: 10px 28px;
-    font-size: 14px;
+    font-size: 20px;
   }
 }
 @media (max-width: 550px){

@@ -51,8 +51,8 @@ def create_app(test_config=None):
     from webSite import db_init
     db_init.init_app(app)
 
-    from . import graphs
-    app.register_blueprint(graphs.bp)
+    from . import pages
+    app.register_blueprint(pages.bp)
 
     return app
 

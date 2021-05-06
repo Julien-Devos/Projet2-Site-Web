@@ -28,11 +28,11 @@
 <!--        <img class="img-fluid" id="theme_bulb" onclick="changeThemeCookie();darkMode();" title="Mode sombre" src="{{url_for('static',filename='icons/light_white_min.png')}}">-->
        <ul>
         <li><a {% if request.url_rule.endpoint == "index" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('index')}}">Accueil</a></li>
-        <li><a {% if request.url_rule.endpoint == "graphs.figure1_1" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('graphs.figure1_1')}}">Figure 1.1</a></li>
-        <li><a {% if request.url_rule.endpoint == "graphs.figure3_1" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('graphs.figure3_1')}}">Figure 3.1</a></li>
-        <li><a {% if request.url_rule.endpoint == "graphs.figure3_2" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('graphs.figure3_2')}}">Figure 3.2</a></li>
-        <li><a {% if request.url_rule.endpoint == "graphs.figure4_2" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('graphs.figure4_2')}}">Figure 4.2</a></li>
-        <li><a {% if request.url_rule.endpoint == "graphs.figure_5" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('graphs.figure_5')}}">Figure 5</a></li>
+        <li><a {% if request.url_rule.endpoint == "pages.figure1" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('pages.figure1')}}">Figure 1</a></li>
+        <li><a {% if request.url_rule.endpoint == "pages.figure2" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('pages.figure2')}}">Figure 2</a></li>
+        <li><a {% if request.url_rule.endpoint == "pages.figure3" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('pages.figure3')}}">Figure 3</a></li>
+        <li><a {% if request.url_rule.endpoint == "pages.figure4" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('pages.figure4')}}">Figure 4</a></li>
+        <li><a {% if request.url_rule.endpoint == "pages.figure5" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('pages.figure5')}}">Figure 5</a></li>
         <li><span class="theme-icon" onclick="switchTheme();" title="Switch theme"></span></li>
        </ul>
     </nav>
