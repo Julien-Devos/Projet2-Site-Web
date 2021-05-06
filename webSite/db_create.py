@@ -1,3 +1,5 @@
+import platform
+
 def create_db(db):
 
     inserts = ['animaux_data.sql','animaux_types_data.sql','animaux_velages_data.sql','complications_data.sql',
@@ -10,7 +12,12 @@ def create_db(db):
 
     for insert in inserts:
 
-        print("\r- Inserting '{}' into the database [".format(insert) + ' ... ' + "]", end="")
-        sql_insert = open('webSite/sql-data/' + str(insert), encoding='utf-8')
-        db.executescript(sql_insert.read())
-        print("\r- Inserting '{}' into the database [".format(insert) + ' DONE ' + "]", end="\n")
+        if platform.system() == "Windows":
+            print("\r- Inserting '{}' into the database [".format(insert) + ' ... ' + "]")
+            sql_insert = open('webSite/sql-data/' + str(insert), encoding='utf-8')
+            db.executescript(sql_insert.read())
+            print("\r- Inserting '{}' into the database [".format(insert) + ' DONE ' + "]", end="\n")
+        else:
+
+
+print(platform.system(),platform.release(),platform.version())
