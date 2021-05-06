@@ -82,6 +82,8 @@ html{
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 #errorTitle {
   font-size: 300px;
@@ -96,7 +98,7 @@ html{
 }
 #errorT2{
   font-size: 50px;
-  margin-left: 250px;
+  margin-left: 135px;
   text-align: center;
 }
 .btn-center{
@@ -248,5 +250,49 @@ a.active,a.not-active:hover{
   }
   #fig3\.2,#fig5{
     height: 500px;
+  }
+}
+/* Responsive for 404 page */
+@media (max-width: 825px){
+  .logo404{
+    width: 150px;
+    height: 150px;
+  }
+  #errorTitle {
+    margin-top: 220px;
+    font-size: 200px;
+  }
+  #errorT1{
+    font-size: 50px;
+    margin-right: -110px;
+  }
+  #errorT2{
+    margin-left: 135px;
+    font-size: 35px;
+  }
+  .btn-center{
+    margin-top: 80px;
+  }
+  .btn{
+    padding: 10px 28px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 550px){
+  .logo404{
+    width: 130px;
+    height: 130px;
+  }
+  #errorTitle {
+    margin-top: 220px;
+    font-size: 180px;
+  }
+  #errorT1{
+    font-size: 45px;
+    margin-right: -150px;
+  }
+  #errorT2{
+    margin-left: 110px;
+    font-size: 28px;
   }
 }

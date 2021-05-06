@@ -31,11 +31,11 @@ function getCookie(name) {
 }
 function changeThemeCookie() {
      var darkTheme = getCookie("darktheme");
-     if (darkTheme === "False") {
-         document.cookie = "darktheme=True"
+     if (darkTheme === "True") {
+         document.cookie = "darktheme=False"
      }
      else{
-         document.cookie = "darktheme=False"
+         document.cookie = "darktheme=True"
      }
 }
 function stopScroll() {
