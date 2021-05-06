@@ -36,7 +36,6 @@ def phase(date):
    pos = position(date)
    phasename = phase_p(pos)
 
-   # roundedpos = round(float(pos), 3)
    return phasename
 
 if __name__=="__main__":

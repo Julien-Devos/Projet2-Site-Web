@@ -22,10 +22,8 @@
             <i class="fas fa-bars"></i>
         </label>
         <a href="{{url_for('index')}}" class="image-link">
-        <img class="logo" src="{{url_for('static',filename='img/logo.png')}}">
+            <img class="logo" onmouseover="this.src='static/img/logoKAWAI.png'" onmouseout="this.src='static/img/logo.png'" src="static/img/logo.png">
         </a>
-<!--        <a class="icon-test" onclick="changeThemeCookie();darkMode();"></a>-->
-<!--        <img class="img-fluid" id="theme_bulb" onclick="changeThemeCookie();darkMode();" title="Mode sombre" src="{{url_for('static',filename='icons/light_white_min.png')}}">-->
        <ul>
         <li><a {% if request.url_rule.endpoint == "index" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('index')}}">Accueil</a></li>
         <li><a {% if request.url_rule.endpoint == "pages.figure1" %}class="active"{% else %}class="not-active"{% endif %} href="{{url_for('pages.figure1')}}">Figure 1</a></li>
