@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-# To install all packages do => pip install -e .
+# To install all packages do => pip install -r requirements.txt
 setup(
     name='flaskr',
     version='1.0.0',

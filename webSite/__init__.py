@@ -32,7 +32,7 @@ def create_app(test_config=None):
     @app.route('/', endpoint='index')
     def index():
         return render_template('index.html',style=stylesheet)
-    
+
     # Auto reload for pythonanywhere
     @app.route('/update_server', methods=['POST'])
     def webhook():
@@ -55,4 +55,3 @@ def create_app(test_config=None):
     app.register_blueprint(pages.bp)
 
     return app
-
