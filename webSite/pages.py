@@ -12,6 +12,10 @@ def before_request():
     stylesheet = styleSheet()
 
 
+@bp.route('/test')
+def test():
+    return render_template('test.html', style=stylesheet)
+
 @bp.route('/figure1')
 def figure1():
 

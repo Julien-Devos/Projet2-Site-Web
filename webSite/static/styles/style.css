@@ -14,6 +14,40 @@
 
 /* TEST ZONE */
 
+body, html {
+  height: 100%;
+}
+
+.parallax {
+  /* The image used */
+
+  /* Full height */
+  height: 70%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.caption {
+    position: absolute;
+    left: 0;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+.caption span.border {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #221f1d;
+    font-family: "Noto Sans TC",sans-serif;
+    font-size: 25px;
+    letter-spacing: 10px;
+    font-weight: bold;
+    padding: 18px
+}
+
 #img1{
   width: 40%;
   border-radius: 3%;

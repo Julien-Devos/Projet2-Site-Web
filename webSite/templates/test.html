@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <title>{% block title %}Accueil{% endblock %}</title>
+{% endblock %}
+
+{% block content %}
+   <body>
+
+    <div class="parallax" style="background-image: url('/static/img/illustrations/test2flou.jpg')"></div>
+
+    <div class="caption">
+      <span class="border">La ferme des 3 chênes</span>
+    </div>
+
+    <div class="flex-text">
+           <p class="paragraph" style="height:200px">Ce site reprend les données des nombreuses habitantes laitières de la ferme afin de les
+               implémenter dans différentes figures. Chacune de ces figures correspond à un problème ou tout simplement
+               une question qui peut facilement être répondue à l’aide d’un graphique. Ce qui permet de rendre ces
+               données visuelles.</p>
+    </div>
+
+    <div class="parallax" style="background-image: url('/static/img/illustrations/testflou.jpg')"></div>
+
+   </body>
+{% endblock %}

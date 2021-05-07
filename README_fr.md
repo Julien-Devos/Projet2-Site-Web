@@ -1,52 +1,52 @@
 # Projet 2 - Site Web
 
-Project 2 of group 1C_3 for the LINFO1002 course at UCLouvain.
+Projet 2 du groupe 1C_3 pour le cours LINFO1002 à l'UCLouvain.
 
-The goal of the project is to create a website that analyse data from a 
-database to make them more visual.
+Le but du projet est de créer un site web qui analyse des
+données provenant d'une DataBase pour en faciliter la visualisation.
 
-## Links:
+## Liens:
 
-> - **GitHub repository:** <https://github.com/Julien-Devos/Projet2-Site-Web>
-> - **Link of the hosted website:** <http://juliendv.eu.pythonanywhere.com>
+> - **Lien du Repository GitHub:** <https://github.com/Julien-Devos/Projet2-Site-Web>
+> - **Lien du site hébergé:** <http://juliendv.eu.pythonanywhere.com>
 
-## Requirements:
+## Conditions requises:
 
-  - Needs to have Python 3.8 installed minimum.
+  - Avoir Python 3.8 minimum.
 
-  - Needs to have all the required packages installed.
+  - Avoir installé les packages requis.
     
     ```batch
-    To install them:
+    Pour les installer:
     
     $ pip install -r requirements.txt
     ```
 
-## Set-up:
+## Installation:
 
-  - If the requirements are met:
+  - Si les conditions requises sont cochées:
   
     ```batch
-    On windows:
+    Sur windows:
     
     $ set FLASK_APP=webSite
     $ flask create-db
     
-    On Linux/MacOS:
+    Sur Linux/MacOS:
     
     $ export FLASK_APP=webSite
     $ flask create-db
     ```
 
-  - When it's done, you just have to type this command to launch the website:
+  - Une fois que c'est fait, pour lancer le site il suffit de faire cette commande:
 
     ```batch
     $ flask run
     ```
     
-  - And then you can go on: <http://127.0.0.1:5000>
+  - Rendez vous alors sur: <http://127.0.0.1:5000>
 
-## Project file tree:
+## Arborescence de fichiers du projet:
 
 ```
 .
