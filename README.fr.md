@@ -1,3 +1,6 @@
+[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/Julien-Devos/Projet2-Site-Web/blob/master/README.fr.md)
+[![fr](https://img.shields.io/badge/lang-fr-blue.svg)](https://github.com/Julien-Devos/Projet2-Site-Web/blob/master/README.md)
+
 # Projet 2 - Site Web
 
 Projet 2 du groupe 1C_3 pour le cours LINFO1002 à l'UCLouvain.

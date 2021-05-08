@@ -39,6 +39,24 @@ html{
     color: #221f1d;
 }
 
+/* Home */
+.home-title-div span.home-title {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #221f1d;
+}
+#up:before{
+  color: rgba(54, 57, 63, 0.7);
+}
+#down:before{
+  color: rgba(255, 255, 255, 0.5);
+}
+#down:hover:before{
+  color: rgba(179, 179, 179, 0.5);
+}
+#up:hover:before{
+  color: rgba(113, 116, 123, 0.7);
+}
+
 /* 404 page */
 .btn{
   background-color: #fff; /* Green */

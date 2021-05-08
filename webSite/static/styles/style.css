@@ -14,40 +14,6 @@
 
 /* TEST ZONE */
 
-body, html {
-  height: 100%;
-}
-
-.parallax {
-  /* The image used */
-
-  /* Full height */
-  height: 70%;
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.caption {
-    position: absolute;
-    left: 0;
-    top: 40%;
-    width: 100%;
-    text-align: center;
-    color: #000;
-}
-.caption span.border {
-    background-color: rgba(255, 255, 255, 0.8);
-    color: #221f1d;
-    font-family: "Noto Sans TC",sans-serif;
-    font-size: 25px;
-    letter-spacing: 10px;
-    font-weight: bold;
-    padding: 18px
-}
-
 #img1{
   width: 40%;
   border-radius: 3%;
@@ -56,9 +22,12 @@ body, html {
   margin-right: auto;
 }
 
-
 /* TEST ZONE */
 
+body, html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
 
 /* Fonts */
 @font-face {
@@ -66,6 +35,54 @@ body, html {
   src: url('/static/Fonts/icons.woff') format('woff');
 }
 
+
+/* Home page */
+.home-title-div {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+}
+.home-title-div span.home-title {
+    font-family: "Noto Sans TC",sans-serif;
+    font-size: 50px;
+    letter-spacing: 5px;
+    font-weight: bold;
+    vertical-align: middle;
+    padding: 15px
+}
+.fixed-img{
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.scroll{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+#scroll-down{
+  top: 60%;
+}
+#scroll-up{
+  top: 1440px;
+}
+#down:before{
+  font-family: "icons",sans-serif;
+  content: "\62";
+  font-size: 40px;
+  text-decoration: none;
+}
+#up:before{
+  font-family: "icons",sans-serif;
+  content: "\63";
+  font-size: 40px;
+  text-decoration: none;
+}
 
 /* Texts */
 .flex-text{
@@ -88,7 +105,8 @@ body, html {
   font-family: 'Roboto',sans-serif;
   font-size: 14px;
   text-align: center;
-  margin: 25px auto 25px auto;
+  height: 50px;
+  margin: 40px auto 25px auto;
 }
 
 

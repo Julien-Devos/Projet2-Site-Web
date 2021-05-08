@@ -6,32 +6,47 @@
 
 {% block content %}
    <body>
-       <div class="flex-text">
-           <h1 class="title" id="homeTitle">La ferme des 3 chênes</h1>
-       </div>
 
-       <div class="flex-text">
-           <p class="paragraph">Bienvenue sur le site de la ferme des 3 chênes !</p>
-       </div>
+    <div class="fixed-img" style="background-image: url('/static/img/illustrations/farm.png')"></div>
 
-<!--       <div class="flex-text">-->
-<!--           <p class="paragraph"> <img id="img1" src="{{url_for('static',filename='img/illustrations/Vache 3.jpg')}}" title="Une bonne vache sa mère"> </p>-->
-<!--       </div>-->
+    <div class="home-title-div">
+        <span class="home-title">La ferme des 3 chênes</span>
+    </div>
 
-       <div class="flex-text">
-           <p class="paragraph">Ce site reprend les données des nombreuses habitantes laitières de la ferme afin de les
+    <div class="scroll" id="scroll-down">
+        <a href="#intro"><span id="down"></span></a>
+    </div>
+
+    <!--  Define where the down scroll stops  -->
+    <div style="position: absolute; margin-top: -180px">
+        <p id="intro"></p>
+    </div>
+
+    <div class="flex-text">
+        <p class="paragraph">Bienvenue sur le site de la ferme des 3 chênes !</p>
+    </div>
+
+    <div class="flex-text">
+        <p class="paragraph">Ce site reprend les données des nombreuses habitantes laitières de la ferme afin de les
                implémenter dans différentes figures. Chacune de ces figures correspond à un problème ou tout simplement
                une question qui peut facilement être répondue à l’aide d’un graphique. Ce qui permet de rendre ces
                données visuelles.</p>
-       </div>
+    </div>
 
-       <div class="flex-text">
-           <p class="paragraph">Afin d’y voir plus clair,on vous laisse voyager à travers ces figures qui se situent en haut à droite de la page!</p>
-       </div>
+    <div class="flex-text">
+        <p class="paragraph">Afin d’y voir plus clair, on vous laisse voyager à travers ces figures qui se situent en
+                             haut à droite de la page!</p>
+    </div>
 
-       <div class="flex-text">
-           <p class="paragraph" style="text-align: center">Bon voyage !</p>
-       </div>
+    <div class="flex-text">
+        <p class="paragraph" style="text-align: center; height: 150px">Bon voyage !</p>
+    </div>
+
+    <div class="scroll" id="scroll-up">
+        <a href="#"><span id="up"></span></a>
+    </div>
+
+    <div class="fixed-img" style="background-image: url('/static/img/illustrations/farm2.png')"></div>
 
    </body>
 {% endblock %}

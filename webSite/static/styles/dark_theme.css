@@ -39,6 +39,23 @@ html{
     color: #d1cac5;
 }
 
+/* Home */
+.home-title-div span.home-title {
+  background-color: rgba(54, 57, 63, 0.7);
+  color: #d1cac5;
+}
+#up:before{
+  color: rgba(255, 255, 255, 0.5);
+}
+#down:before{
+  color: rgba(54, 57, 63, 0.7);
+}
+#down:hover:before{
+  color: rgba(113, 116, 123, 0.7);
+}
+#up:hover:before{
+  color: rgba(179, 179, 179, 0.5);
+}
 
 /* 404 page */
 .center{
