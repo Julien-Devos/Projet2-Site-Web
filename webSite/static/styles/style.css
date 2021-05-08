@@ -31,7 +31,7 @@ body, html {
 
 /* Fonts */
 @font-face {
-  font-family: 'icons';
+  font-family: 'icons'; /* Font made with icomoon.io */
   src: url('/static/Fonts/icons.woff') format('woff');
 }
 
@@ -99,7 +99,21 @@ body, html {
 .paragraph{
   font-size: 20px;
   text-align: justify;
-  margin: 50px 200px auto;
+  margin: 30px 200px auto;
+}
+.home-paragraph{
+  font-size: 25px;
+  text-align: justify;
+  margin: 40px 200px auto;
+}
+#bvn{
+  margin-top: 50px;
+  font-size: 35px;
+}
+.sub-title{
+  font-size: 30px;
+  text-align: left;
+  margin: 50px 200px 30px;
 }
 .credits{
   font-family: 'Roboto',sans-serif;
@@ -235,6 +249,10 @@ a.active,a.not-active:hover{
     margin-left: 100px;
     margin-right: 100px;
   }
+  .sub-title{
+    margin-left: 100px;
+    margin-right: 100px;
+  }
   .theme_bulb{
     margin-left: 93%;
   }
@@ -262,6 +280,10 @@ a.active,a.not-active:hover{
     font-size: 50px;
   }
   .paragraph{
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  .sub-title{
     margin-left: 50px;
     margin-right: 50px;
   }
@@ -299,6 +321,10 @@ a.active,a.not-active:hover{
 
 @media (max-width: 850px){
   .paragraph{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .sub-title{
     margin-left: 20px;
     margin-right: 20px;
   }
