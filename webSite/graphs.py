@@ -1,5 +1,5 @@
 from webSite.db_init import get_db
-from datetime import date,datetime
+from datetime import date, datetime
 from . import moon
 
 
@@ -10,10 +10,11 @@ def figure1():
     for velage in db.execute('SELECT velages.date FROM velages ORDER BY velages.id'):
         velages.append(velage)
 
-    d = {'New Moon': 0,'Waxing Crescent': 0,'First Quarter': 0,'Waxing Gibbous': 0,'Full Moon': 0,'Waning Gibbous': 0,'Last Quarter': 0,'Waning Crescent': 0}
+    d = {'New Moon': 0, 'Waxing Crescent': 0, 'First Quarter': 0, 'Waxing Gibbous': 0, 'Full Moon': 0,
+         'Waning Gibbous': 0, 'Last Quarter': 0, 'Waning Crescent': 0}
     for dates in velages:
         dateSplit = dates[0].split("/")
-        date = datetime(int(dateSplit[2]),int(dateSplit[1]),int(dateSplit[0]))
+        date = datetime(int(dateSplit[2]), int(dateSplit[1]), int(dateSplit[0]))
         moonPhase = moon.phase(date)
         d[moonPhase] += 1
 
@@ -30,14 +31,14 @@ def figure2():
 
     data_from_db = []
     for dcd in db.execute('SELECT animaux.mort_ne, velages.date FROM velages, '
-                                 'animaux_velages, animaux WHERE animaux_velages.velage_id = velages.id and '
-                                 'animaux_velages.animal_id = animaux.id ORDER BY velages.id'):
+                          'animaux_velages, animaux WHERE animaux_velages.velage_id = velages.id and '
+                          'animaux_velages.animal_id = animaux.id ORDER BY velages.id'):
         data_from_db.append(dcd)
-    #print(data_from_db[1][1])
-    data_3 = [[] for i in range(1,13)]
-    for i in range(len(data_from_db)) :
+    # print(data_from_db[1][1])
+    data_3 = [[] for i in range(1, 13)]
+    for i in range(len(data_from_db)):
         new_date = data_from_db[i][1].split("/")
-        #print(new_date)
+        # print(new_date)
         if int(new_date[1]) == 1:
             data_3[0].append(data_from_db[i][0])
         if int(new_date[1]) == 2:
@@ -75,8 +76,8 @@ def figure3():
 
     velages = []
     for velage in db.execute('SELECT animaux.mort_ne, animaux.decede, familles.nom, velages.date FROM velages, '
-                                 'animaux_velages, animaux, familles WHERE animaux_velages.velage_id = velages.id and '
-                                 'animaux_velages.animal_id = animaux.id  and familles.id = animaux.famille_id  ORDER BY velages.id'):
+                             'animaux_velages, animaux, familles WHERE animaux_velages.velage_id = velages.id and '
+                             'animaux_velages.animal_id = animaux.id  and familles.id = animaux.famille_id  ORDER BY velages.id'):
         velages.append(velage)
 
     Data = {}
@@ -167,55 +168,86 @@ def figure4():
     #     data_liste[1].append(dico[nom][0])
     #     data_liste[2].append(dico[nom][1])
     #     data_liste[3].append(dico[nom][2])
-            
+
     return None
 
 
 def figure5():
+    """
+    Calcule les taux de vaches femelles, de jumeaux, et de morts prématurés pour chaque famille.
+    """
+    # Requête vers la base de donnée SQL pour aller prendre les valeurs nécessaire à nos calculs
     db = get_db()
     donnees = []
-    for donnee in db.execute('SELECT animaux.sexe, velages.mere_id, velages.date, familles.nom, animaux.mort_ne, animaux.decede FROM velages, '
-                             'animaux_velages, animaux, familles WHERE animaux_velages.velage_id = velages.id and '
-                             'animaux_velages.animal_id = animaux.id  and familles.id = animaux.famille_id  ORDER BY velages.id'):
+    for donnee in db.execute(
+            'SELECT animaux.sexe, velages.mere_id, velages.date, familles.nom, animaux.mort_ne, animaux.decede FROM velages, '
+            'animaux_velages, animaux, familles WHERE animaux_velages.velage_id = velages.id and '
+            'animaux_velages.animal_id = animaux.id  and familles.id = animaux.famille_id  ORDER BY velages.id'):
         donnees.append(donnee)
 
+    # Création du dictionnaire qui servira de répertoire
     d = {}
 
+    # Boucle pour parcourir les valeurs des vaches une par une
     for donnee in donnees:
+        # Attribution de nom de variables pour chauque valeur
         sexe, mere_id, date_naiss, nom, mort_ne, decede = donnee[0], donnee[1], donnee[2], donnee[3], donnee[4], donnee[5]
+
+        # Si la famille n'est pas encore dans le repertoire, on l'ajoute sous la forme suivante:
+        # d[nom] = [Nbre de vaches total, Nbre de femelles, (id de la mère et date de maissance du dernier veau né),...
+        # ... Nbre de jumeaux au total, Série de jumeaux, Nbre de morts prématurés]
         if nom not in d:
+            # Vérifie si la première vache est femelle
             if sexe == 'F':
-                d[nom] = [1, 0, [(mere_id, date_naiss)], 0, mort_ne + decede, 1, 0]
-            elif sexe == 'M':
-                d[nom] = [0, 1, [(mere_id, date_naiss)], 0, mort_ne + decede, 1, 0]
+                d[nom] = [1, 1, (mere_id, date_naiss), 0, 0, mort_ne + decede]
+            else:
+                d[nom] = [1, 0, (mere_id, date_naiss), 0, 0, mort_ne + decede]
+
+        # Si la famille est déjà dans le dictionnaire, on:
         else:
+            # Ajoute une vache au total
+            d[nom][0] += 1
+            # Si c'est une femelle, on l'ajoute au total
             if sexe == 'F':
-                d[nom][0] += 1
-            elif sexe == 'M':
                 d[nom][1] += 1
+            # Vérifie si le dernier veau né a la même mère et la même date de naissance
             if mere_id == d[nom][2][0] and date_naiss == d[nom][2][1]:
-                if d[nom][6] == 0:
-                    d[nom][3] = 2
-                    d[nom][6] += 1
+                # Si c'est le cas, on regarde si il y avait d'autres veaux jumeaux avant
+                if d[nom][4] == 0:
+                    # Si c'est les premiers jumeaux de la série, on ajoute 2 au total des jumeaux et on set 1 à la
+                    # variable qui détermine si ils sont en série
+                    d[nom][3] += 2
+                    d[nom][4] = 1
                 else:
+                    # Si il y a une série de jumeaux déjà en cours, l'on ajoute juste 1 au compteur de jumeaux
                     d[nom][3] += 1
+            # Si le dernier veau de la famille n'est pas jumeau avec le current, l'on set la nouvelle date de naissance
+            # comme réference et l'on set la série de jumeaux à 0.
             else:
                 d[nom][2] = (mere_id, date_naiss)
-            d[nom][4] += mort_ne + decede
-            d[nom][5] += 1
+                d[nom][4] = 0
+            # On ajoute ici les morts prématurés si c'est le cas
+            d[nom][5] += mort_ne + decede
 
+    # On va maintenant calculer les taux pour chaque famille à partir des valeurs récoltés et les mettre dans d_2
     d_2 = {}
+    # d_2 aura la forme : { Nom: [Taux de femelles, Taux de jumeaux, Taux de mort préma], ... }
     for i in d.items():
-        d_2[i[0]] = [round(((i[1][0] / i[1][5])*100)), round(((i[1][3] / i[1][5])*100)), round(((i[1][4] / i[1][5])*100)), i[1][5]]
-        d_2[i[0]].append((d_2[i[0]][0]+d_2[i[0]][1]+d_2[i[0]][2]))
+        d_2[i[0]] = [round(((i[1][1] / i[1][0]) * 100)), round(((i[1][3] / i[1][0]) * 100)),
+                     round(((i[1][4] / i[1][0]) * 100)), i[1][0]]
+        # On additionne les taux obtenus pour pouvoir trier le graphique par leur somme
+        d_2[i[0]].append((d_2[i[0]][0] + d_2[i[0]][1] + d_2[i[0]][2]))
+
+    # On trie les familles par la somme de leur 3 taux
     d_2 = {k: v for k, v in sorted(d_2.items(), key=lambda item: item[1][3], reverse=False)}
 
+    # On forme ici la liste qu'on va retourner
     data_list = [[], [], [], [], []]
     for i in d_2.items():
-        data_list[0].append(i[0])
-        data_list[1].append(i[1][0])
-        data_list[2].append(i[1][1])
-        data_list[3].append(i[1][2])
-        data_list[4].append(i[1][3])
+        data_list[0].append(i[0])  # Nom de la famille
+        data_list[1].append(i[1][0])  # Taux de femelles
+        data_list[2].append(i[1][1])  # Taux de jumeaux
+        data_list[3].append(i[1][2])  # Taux de morts prématurés
+        data_list[4].append(i[1][3])  # Nombre de vaches total de la famille
 
     return data_list
