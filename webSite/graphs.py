@@ -176,7 +176,7 @@ def figure5():
     """
     Calcule les taux de vaches femelles, de jumeaux, et de morts prématurés pour chaque famille.
     """
-    # Requête vers la base de donnée SQL pour aller prendre les valeurs nécessaire à nos calculs
+    # Requête vers la base de donnée SQL pour aller prendre les valeurs nécessaires à nos calculs
     db = get_db()
     donnees = []
     for donnee in db.execute(
