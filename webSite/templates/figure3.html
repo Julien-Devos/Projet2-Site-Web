@@ -1,19 +1,55 @@
 {% extends 'base.html' %}
 
 {% block header %}
-    <h1>{% block title %}Figure 3.2{% endblock %}</h1>
+    <h1>{% block title %}Figure 3{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
     <body>
         <div class="flex-text">
-            <h1 class="title" id="figure3.2">Figure 3.2</h1>
+            <h1 class="title" id="figure3">Figure 3</h1>
         </div>
+
         <div class="flex-text">
-            <p class="paragraph">Cette figure permet de savoir si une famille a un taux de morts nés ou décès prématurés plus élevé qu'une autre.
-                Pour ce faire, il fallait mettre toutes les familles sur un même pied d'égalité pour pouvoir les comparer correctement. C'est pour ça que chaque
-                statistique est calculée en fonction du nombre total de velages que compte la famille au total. Ce qui permet d'avoir des chiffres plus démonstratifs.</p>
+            <p class="sub-title">Problématique</p>
         </div>
+
+        <div class="flex-text">
+            <p class="paragraph">Malheureusement, il arrive que lors du vêlage, le veau ne survive pas. Pour permettre
+                d’éviter ça, il peut être utile d’en comprendre les causes.</p>
+        </div>
+
+        <div class="flex-text">
+            <p class="paragraph">Une des causes pourrait venir de la famille. Est-ce qu’une famille en particulier a eu
+                beaucoup de mort-nés en plus qu'une autre ? Si oui, ça peut être une piste à explorer pour trouver la
+                cause du problème.</p>
+        </div>
+
+        <div class="flex-text">
+            <p class="sub-title">Graphique</p>
+        </div>
+
+        <div class="flex-text">
+            <p class="paragraph">Le graphique doit permettre de se rendre compte si une famille en particulier possède
+                plus de mort-nés. Or toutes les familles n’ont pas le même nombre de veaux et si on compare une famille
+                qui a 5 veaux dont 2 mort-nés avec une famille qui a 500 veaux dont 3 mort-nés, on pourrait dire que 3
+                c’est plus que 2 mais avoir perdu 3 veaux sur 500 c’est bien mieux que d’en avoir perdu 2 sur 5. </p>
+        </div>
+
+        <div class="flex-text">
+            <p class="paragraph">Donc pour permettre de mettre les familles sur un pied d’égalité, ce sera non pas le
+                nombre de mort-nés qui sera affiché mais bien le pourcentage de mort-nés par rapport au nombre total de vêlages
+                au sein de la famille. Il en sera de même pour les veaux vivants et décédés prématurément, ce qui
+                permettra de comparer toutes les familles correctement.</p>
+        </div>
+
+        <div class="flex-text">
+            <p class="paragraph">Le graphique est également agrémenté du nombre total de vêlages dans la famille, ce qui
+                peut être utile pour se faire une meilleure représentation du pourcentage. Par contre, pour augmenter la
+                lisibilité du graphique, cette donnée est désactivée par défaut et il faut donc cliquer dessus dans la
+                légende pour la voir sur le graphique.</p>
+        </div>
+
         <div class="figure" id="fig3.2">
             <canvas id="bar-chart" width="100%" height="100%"></canvas>
         </div>
@@ -25,6 +61,8 @@
                 var mHovCol = css.getPropertyValue('--mHovColJ')
                 var dCol = css.getPropertyValue('--dColJ')
                 var dHovCol = css.getPropertyValue('--dHovColJ')
+                var totCol = css.getPropertyValue('--totColJ')
+                var totHovCol = css.getPropertyValue('--totHovColJ')
                 var tCol = css.getPropertyValue('--tCol')
                 var lCol = css.getPropertyValue('--lCol')
                 var xGCol = css.getPropertyValue('--xGCol')
@@ -33,23 +71,17 @@
                 var yValCol = css.getPropertyValue('--yValCol')
 
 
+                var familles = {{data[0] | safe}}
                 var vivants = {{data[1] | safe}}
                 var morts_nes = {{data[2] | safe}}
-                var decede = {{data[3] | safe}}
-                var familles = {{data[0] | safe}}
+                var autre = {{data[3] | safe}}
+                var total = {{data[4] | safe}}
                 var bar_ctx = document.getElementById('bar-chart');
                 var bar_chart = new Chart(bar_ctx, {
                     type: 'bar',
                     data: {
                         labels: familles,
                         datasets: [
-                        {
-                            label: 'Vivants',
-                            data: vivants,
-                            backgroundColor: vCol,
-                            hoverBackgroundColor: vHovCol,
-                            hoverBorderWidth: 0
-                        },
                         {
                             label: 'Morts nés',
                             data: morts_nes,
@@ -59,11 +91,26 @@
                         },
                         {
                             label: 'Décès prématurés',
-                            data: decede,
+                            data: autre,
                             backgroundColor: dCol,
                             hoverBackgroundColor: dHovCol,
-                            hoverBorderWidth: 0
+                            hoverBorderWidth: 0,
                         },
+                        {
+                            label: 'Vivants',
+                            data: vivants,
+                            backgroundColor: vCol,
+                            hoverBackgroundColor: vHovCol,
+                            hoverBorderWidth: 0,
+                        },
+                        {
+                            label: 'Vêlages totaux',
+                            data: total,
+                            backgroundColor: totCol,
+                            hoverBackgroundColor: totHovCol,
+                            hoverBorderWidth: 0,
+                            hidden: true
+                        }
                         ]
                     },
                        options: {
@@ -72,7 +119,7 @@
                         },
                         title: {
                             display: true,
-                            text: "Graphique du taux d'animaux vivants/morts-nés/décédés prématurément par an et par famille",
+                            text: "Graphique",
                             fontColor: tCol
 
                         },

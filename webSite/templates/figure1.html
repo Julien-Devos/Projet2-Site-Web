@@ -1,21 +1,21 @@
 {% extends 'base.html' %}
 
 {% block header %}
-    <h1>{% block title %}Figure 1.1{% endblock %}</h1>
+    <h1>{% block title %}Figure 1{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
     <body>
         <div class="flex-text">
-            <h1 class="title" id="figure1.1">Figure 1</h1>
+            <h1 class="title" id="figure1">Figure 1</h1>
         </div>
         <div class="flex-text">
             <p class="paragraph">Certains dires d’éleveurs laissent croire qu’il y aurait plus de naissances lors des
-                pleines lunes, mais est-ce que c’est vrai? C’est ici qu’intervient la figure 1.1.</p>
+                pleines lunes, mais est-ce que c’est vrai ? C’est ici qu’intervient la figure 1.</p>
         </div>
         <div class="flex-text">
             <p class="paragraph">Des données de naissances ont été mises sous la forme d’un graphique radar avec deux
-                paramètres, le premier étant le niveau de pleine lune.</p>
+                paramètres, le premier étant la phase de la lune lors du vêlage (naissance).</p>
         </div>
         <div class="flex-text">
             <p class="paragraph">Le second paramètre lui est bien évidemment le nombre de naissances. Une fois le
@@ -26,8 +26,8 @@
             <p class="sub-title">Comment lire le graphique ?</p>
         </div>
         <div class="flex-text">
-            <p class="paragraph">Le niveau de pleine lune se divise en 8 étapes, c’est pour quoi le graphique est un
-                octogone (8 angles). A chacun de ces angles s’identifie donc une étape de la lune.
+            <p class="paragraph">Le niveau de pleine lune se divise en 8 phases, c’est pour quoi le graphique est un
+                octogone (8 angles). À chacun de ces angles s’identifie donc une phase de la lune.
                 Nous savons donc déjà identifier la position de ces informations! Chouette!</p>
         </div>
         <div class="flex-text">
@@ -49,7 +49,7 @@
         <div class="flex-text">
             <p class="paragraph">En conclusion, on peut voir qu’il y a une différence sur le nombre de naissance en
                 fonction des étapes lunaires, mais rien ne peut laisser croire que c’est le moment de la pleine lune
-                qui à un effet dessus puisque celle-ci n’est même pas l’étape aux nombre de naissances le plus élevé.</p>
+                qui a un effet dessus puisque celle-ci n’est même pas l’étape aux nombre de naissances le plus élevé.</p>
         </div>
             <script>
                 var css = getComputedStyle(document.body)
@@ -67,7 +67,7 @@
 
                 var datas = {{data | safe}}
                 var bar_ctx = document.getElementById('bar-chart');
-                var bar_chart = new Chart(bar_ctx, {
+                var radar_chart = new Chart(bar_ctx, {
                     type: 'radar',
                     data: {
                         labels: [

@@ -73,44 +73,46 @@ def figure3():
     db = get_db()
 
     velages = []
-    for velage in db.execute('SELECT animaux.mort_ne, animaux.decede, familles.nom, velages.date FROM velages, '
-                             'animaux_velages, animaux, familles WHERE animaux_velages.velage_id = velages.id and '
-                             'animaux_velages.animal_id = animaux.id  and familles.id = animaux.famille_id  ORDER BY velages.id'):
+    for velage in db.execute('SELECT animaux.mort_ne, animaux.decede, familles.nom FROM velages, animaux_velages, animaux,'
+                             'familles WHERE animaux_velages.velage_id = velages.id and animaux_velages.animal_id = '
+                             'animaux.id  and familles.id = animaux.famille_id  ORDER BY velages.id'):
         velages.append(velage)
 
     Data = {}
     for velage in velages:
-        # Schéma du dictionnaire {'nom_famille': ['nb_vivant','nb_mort_ne','nb_mort_prem,'MinDate','MaxDate']'}
-        day, month, year = int(velage[3].split('/')[0]), int(velage[3].split('/')[1]), int(velage[3].split('/')[2])
-        mort_ne, decede, nom, d = velage[0], velage[1], velage[2], date(year, month, day)
+        # Schéma du dictionnaire {'nom_famille': ['nb_vivant','nb_mort_ne','nb_mort_prem']'}
+        mort_ne, decede, nom = velage[0], velage[1], velage[2]
+        if nom == 'Myrtille':
+            print(mort_ne,decede)
         if nom not in Data:
             if mort_ne == 0 and decede == 0:
-                Data[nom] = [1, 0, 0, d, d]
+                Data[nom] = [1, 0, 0]
             else:
-                Data[nom] = [0, mort_ne, decede, d, d]
+                Data[nom] = [0, mort_ne, decede]
         else:
-            if d < Data[nom][3]:
-                Data[nom][3] = d
-            elif d > Data[nom][4]:
-                Data[nom][4] = d
             if mort_ne == 0 and decede == 0:
                 Data[nom][0] += 1
             elif mort_ne == 1 and decede == 0:
                 Data[nom][1] += 1
-            else:
+            elif mort_ne == 0 and decede == 1:
                 Data[nom][2] += 1
 
-    for data in Data.keys():
-        Data[data][3] = (Data[data][4] - Data[data][3]).days / 365
-        Data[data].pop()
-        if Data[data][3] != 0:
-            Data[data][0] = round(Data[data][0] / Data[data][3], 4)
-            Data[data][1] = round(Data[data][1] / Data[data][3], 4)
-            Data[data][2] = round(Data[data][2] / Data[data][3], 4)
-        Data[data].append(Data[data][0] + Data[data][1] + Data[data][2])
+    for family_name in Data.keys():
+        nb_vivant = Data[family_name][0]
+        nb_mort_ne = Data[family_name][1]
+        nb_mort_prem = Data[family_name][2]
+        vel_total = nb_vivant + nb_mort_ne + nb_mort_prem
+
+        if family_name == 'Myrtille':
+            print(family_name,nb_vivant,nb_mort_ne,nb_mort_prem)
+
+        Data[family_name][0] = round((nb_vivant * 100) / vel_total,2)
+        Data[family_name][1] = round((nb_mort_ne * 100) / vel_total,2)
+        Data[family_name][2] = round((nb_mort_prem * 100) / vel_total,2)
+        Data[family_name].append(vel_total)
 
     # Sort the data
-    Data = {k: v for k, v in sorted(Data.items(), key=lambda item: item[1][4], reverse=True)}
+    Data = {k: v for k, v in sorted(Data.items(), key=lambda item: item[1][1], reverse=True)}
 
     data_lst = [[], [], [], [], []]
     for nom in Data:
@@ -118,7 +120,7 @@ def figure3():
         data_lst[1].append(Data[nom][0])
         data_lst[2].append(Data[nom][1])
         data_lst[3].append(Data[nom][2])
-        data_lst[4].append(Data[nom][4])
+        data_lst[4].append(Data[nom][3])
 
     return data_lst
 

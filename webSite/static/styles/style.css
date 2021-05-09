@@ -1,12 +1,14 @@
 
 /* Graphics colors */
 :root{
-  --vColJ: #2471A3;
-  --vHovColJ: #2980B9;
-  --mColJ: #17A589;
-  --mHovColJ: #1ABC9C;
-  --dColJ: #CB4335;
-  --dHovColJ: #EC7063;
+  --dColJ: rgba(36, 113, 163, 0.5);
+  --dHovColJ: rgba(41, 128, 185, 0.5);
+  --vColJ: rgba(23, 165, 137, 0.5);
+  --vHovColJ: rgba(26, 188, 156, 0.5);
+  --mColJ: #CB4335;
+  --mHovColJ: #EC7063;
+  --totColJ: #ea9f18;
+  --totHovColJ: #ffc85e;
   --bColB: #f167f1;
   --bHovColB: #c644c6;
 }
