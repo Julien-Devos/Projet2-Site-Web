@@ -32,19 +32,22 @@ html{
   color: rgba(209, 202, 197, 0.5);
 }
 
-.title{
+.title,.home-title{
     color: #d1cac5;
 }
-.paragraph,.sub-title{
+.paragraph,.home-paragraph,.sub-title{
     color: #d1cac5;
 }
 
 /* Home */
 .home-title-div span.home-title {
-  background-color: rgba(54, 57, 63, 0.7);
+  background-color: #36393f;
   color: #d1cac5;
 }
 #up:before{
+  color: rgba(255, 255, 255, 0.5);
+}
+#down2:before{
   color: rgba(255, 255, 255, 0.5);
 }
 #down:before{
@@ -52,6 +55,9 @@ html{
 }
 #down:hover:before{
   color: rgba(113, 116, 123, 0.7);
+}
+#down2:hover:before{
+  color: rgba(179, 179, 179, 0.5);
 }
 #up:hover:before{
   color: rgba(179, 179, 179, 0.5);

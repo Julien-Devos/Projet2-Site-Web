@@ -21,7 +21,6 @@ def figure1():
     data = []
     for phaseCount in d.keys():
         data.append(d[phaseCount])
-    print(data)
 
     return data
 
@@ -66,7 +65,6 @@ def figure2():
 
     for i in range(len(data_3)):
         data_3[i] = sum(data_3[i])
-    print(data_3)
 
     return data_3
 

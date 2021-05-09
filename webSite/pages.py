@@ -1,6 +1,7 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template,send_from_directory
 from webSite.__init__ import styleSheet
 import webSite.graphs as figures
+import os
 
 bp = Blueprint('pages', __name__)
 
@@ -10,11 +11,6 @@ bp = Blueprint('pages', __name__)
 def before_request():
     global stylesheet
     stylesheet = styleSheet()
-
-
-@bp.route('/test')
-def test():
-    return render_template('test.html', style=stylesheet)
 
 @bp.route('/figure1')
 def figure1():
