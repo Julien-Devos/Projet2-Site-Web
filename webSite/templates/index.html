@@ -11,14 +11,15 @@
 
     <div class="home-title-div">
         <span class="home-title">La ferme des 3 chênes</span>
+        <div class="scroll" id="scroll-down">
+            <a href="#intro"><span id="down"></span></a>
+        </div>
     </div>
 
-    <div class="scroll" id="scroll-down">
-        <a href="#intro"><span id="down"></span></a>
-    </div>
+
 
     <!--  Define where the down scroll stops  -->
-    <div style="position: absolute; margin-top: -180px">
+    <div style="position: absolute; margin-top: -150px">
         <p id="intro"></p>
     </div>
 
@@ -34,18 +35,61 @@
     </div>
 
     <div class="flex-text">
-        <p class="home-paragraph">Afin d’y voir plus clair, on vous laisse voyager à travers ces figures qui se situent en
-                             haut à droite de la page!</p>
+        <p class="home-paragraph">Afin d’y voir plus clair, on vous laisse voyager à travers ces figures en question en
+            cliquant sur leurs noms qui se situent tout en haut de la page !</p>
     </div>
 
     <div class="flex-text">
-        <p class="home-paragraph" style="text-align: center; height: 150px">Bon voyage !</p>
+        <p class="home-paragraph">Vous pouvez aussi aller découvrir les magnifiques photos de vache en bas de cette page.</p>
+    </div>
+
+    <div class="flex-text">
+        <p class="home-paragraph" style="text-align: center; height: 150px">Bon voyage sur notre site !</p>
+        <div class="scroll" id="scroll-down2">
+            <a href="#images"><span id="down2"></span></a>
+        </div>
+    </div>
+
+    <div class="fixed-img" style="background-image: url('/static/img/illustrations/farm2.png');height: 500px"></div>
+
+    <!--  Define where the down2 scroll stops  -->
+    <div style="position: absolute; margin-top: 20px">
+        <p id="images"></p>
+    </div>
+
+    <div class="flex-text">
+        <p class="sub-title" id="img-text">Quelques petites images</p>
+    </div>
+
+    <div class="row">
+      <div class="column">
+        <img src="{{url_for('static',filename='img/illustrations/Vache 1.jpg')}}" style="width:80%">
+      </div>
+      <div class="column">
+        <img src="{{url_for('static',filename='img/illustrations/Vache 2.jpg')}}" style="width:80%">
+      </div>
+      <div class="column">
+        <img src="{{url_for('static',filename='img/illustrations/Vache 4.jpg')}}" style="width:80%">
+      </div>
+      <div class="column">
+        <img src="{{url_for('static',filename='img/illustrations/Vache 6.jpg')}}" style="width:80%">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="column">
+        <img src="{{url_for('static',filename='img/illustrations/Vache 3.jpg')}}" style="width:65%">
+      </div>
+      <div class="column">
+        <img src="{{url_for('static',filename='img/illustrations/Vache 5.jpg')}}" style="width:65%">
+      </div>
+    </div>
+
+    <div class="flex-text">
         <div class="scroll" id="scroll-up">
             <a href="#"><span id="up"></span></a>
         </div>
     </div>
-
-    <div class="fixed-img" style="background-image: url('/static/img/illustrations/farm2.png')"></div>
 
    </body>
 {% endblock %}

@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,redirect,url_for
 import os, git
 
 
@@ -27,6 +27,11 @@ def create_app(test_config=None):
     def before_request():
         global stylesheet
         stylesheet = styleSheet()
+
+    # Allows to render the favicon in all the website
+    @app.route('/favicon.ico')
+    def favicon():
+        return redirect(url_for('static',filename='img/logo.ico'))
 
     # Principal link
     @app.route('/', endpoint='index')

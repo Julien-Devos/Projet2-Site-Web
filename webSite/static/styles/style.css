@@ -14,13 +14,7 @@
 
 /* TEST ZONE */
 
-#img1{
-  width: 40%;
-  border-radius: 3%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
+
 
 /* TEST ZONE */
 
@@ -38,6 +32,7 @@ body, html {
 
 /* Home page */
 .home-title-div {
+    z-index: 0;
     position: absolute;
     left: 0;
     top: 50%;
@@ -66,12 +61,21 @@ body, html {
   text-align: center;
 }
 #scroll-down{
-  top: 60%;
+  margin-top: 25px;
+}
+#scroll-down2{
+  margin-top: -80px;
 }
 #scroll-up{
-  top: 1440px;
+  margin-top: -50px;
 }
 #down:before{
+  font-family: "icons",sans-serif;
+  content: "\62";
+  font-size: 40px;
+  text-decoration: none;
+}
+#down2:before{
   font-family: "icons",sans-serif;
   content: "\62";
   font-size: 40px;
@@ -82,6 +86,14 @@ body, html {
   content: "\63";
   font-size: 40px;
   text-decoration: none;
+}
+.column {
+  flex: 25%;
+}
+.row{
+  text-align: center;
+  display: flex;
+  margin: 25px 25px auto 25px;
 }
 
 /* Texts */
@@ -114,6 +126,10 @@ body, html {
   font-size: 30px;
   text-align: left;
   margin: 50px 200px 30px;
+}
+#img-text{
+  margin: 25px auto 25px auto;
+  text-align: center;
 }
 .credits{
   font-family: 'Roboto',sans-serif;
@@ -245,7 +261,7 @@ a.active,a.not-active:hover{
 
 /* Change css with screen size */
 @media (max-width: 1050px){
-  .paragraph{
+  .paragraph,.home-paragraph{
     margin-left: 100px;
     margin-right: 100px;
   }
@@ -279,13 +295,17 @@ a.active,a.not-active:hover{
     margin-right: 5px;
     font-size: 50px;
   }
-  .paragraph{
+  .paragraph,.home-paragraph{
     margin-left: 50px;
     margin-right: 50px;
   }
   .sub-title{
     margin-left: 50px;
     margin-right: 50px;
+  }
+  .home-title-div span.home-title {
+    font-size: 35px;
+    padding: 10px
   }
   .theme_bulb{
     margin-left: 80%;
@@ -297,6 +317,7 @@ a.active,a.not-active:hover{
     font-size: 50px;
   }
   ul{
+    z-index: 1;
     position: fixed;
     width: 100%;
     height: 100vh;
@@ -320,7 +341,7 @@ a.active,a.not-active:hover{
 
 
 @media (max-width: 850px){
-  .paragraph{
+  .paragraph,.home-paragraph{
     margin-left: 20px;
     margin-right: 20px;
   }

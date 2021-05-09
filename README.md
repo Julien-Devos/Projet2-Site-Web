@@ -68,13 +68,14 @@ database to make them more visual.
 │   │   └── velages_data.sql
 │   ├── static
 │   │   ├── Chart.js
-│   │   │   ├── Chart.bundle.min.js
 │   │   │   ├── Chart.min.css
 │   │   │   └── Chart.min.js
 │   │   ├── Fonts
 │   │   │   └── icons.woff
 │   │   ├── img
 │   │   │   ├── illustrations
+│   │   │   │   ├── farm.png
+│   │   │   │   ├── farm2.png
 │   │   │   │   ├── Vache 1.jpg
 │   │   │   │   ├── Vache 2.jpg
 │   │   │   │   ├── Vache 3.jpg
@@ -106,7 +107,8 @@ database to make them more visual.
 │   ├── moon.py
 │   └── pages.py
 ├── .gitignore    
+├── README.fr.md
 ├── README.md
-├── requirements.txt # Contient les packages à installer
+├── requirements.txt # Contains all the needed packages
 └── setup.py    
 ```
