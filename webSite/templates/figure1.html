@@ -60,14 +60,11 @@
                 var tCol = css.getPropertyValue('--tCol')
                 var lCol = css.getPropertyValue('--lCol')
                 var xGCol = css.getPropertyValue('--xGCol')
-                var xValCol = css.getPropertyValue('--xValCol')
-                var yGCol = css.getPropertyValue('--yGCol')
-                var yValCol = css.getPropertyValue('--yValCol')
                 var background = css.getPropertyValue('--background')
 
                 var datas = {{data | safe}}
                 var bar_ctx = document.getElementById('bar-chart');
-                var radar_chart = new Chart(bar_ctx, {
+                var figure1 = new Chart(bar_ctx, {
                     type: 'radar',
                     data: {
                         labels: [
@@ -83,7 +80,6 @@
                         datasets: [
                         {
                             label: 'Vêlages',
-                            // [SUM NEW MOON, SUM WAXING CRESENT, SUM...]
                             data: datas,
                             borderColor: bCol,
                             hoverBorderColor: bHovCol,

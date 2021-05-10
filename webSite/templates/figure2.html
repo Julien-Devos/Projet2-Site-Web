@@ -20,12 +20,8 @@
         </div>
             <script>
                 var css = getComputedStyle(document.body)
-                var vCol = css.getPropertyValue('--vColJ')
-                var vHovCol = css.getPropertyValue('--vHovColJ')
-                var mCol = css.getPropertyValue('--mColJ')
-                var mHovCol = css.getPropertyValue('--mHovColJ')
-                var dCol = css.getPropertyValue('--dColJ')
-                var dHovCol = css.getPropertyValue('--dHovColJ')
+                var mCol = css.getPropertyValue('--mColM')
+                var mHovCol = css.getPropertyValue('--mHovColM')
                 var tCol = css.getPropertyValue('--tCol')
                 var lCol = css.getPropertyValue('--lCol')
                 var xGCol = css.getPropertyValue('--xGCol')
@@ -36,7 +32,7 @@
 
                 var data = {{data | safe}}
                 var bar_ctx = document.getElementById('bar-chart');
-                var bar_chart = new Chart(bar_ctx, {
+                var figure2 = new Chart(bar_ctx, {
                     type: 'bar',
                     data: {
                         labels: [
@@ -57,8 +53,8 @@
                         {
                             label: 'Mort-nés',
                             data: data,
-                            backgroundColor: vCol,
-                            hoverBackgroundColor: vHovCol,
+                            backgroundColor: mCol,
+                            hoverBackgroundColor: mHovCol,
                             hoverBorderWidth: 0
                         },
                         ]
