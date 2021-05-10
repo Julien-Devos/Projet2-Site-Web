@@ -25,6 +25,7 @@
                 var mHovCol = css.getPropertyValue('&#45;&#45;mHovColJ')
                 var dCol = css.getPropertyValue('&#45;&#45;dColJ')
                 var dHovCol = css.getPropertyValue('&#45;&#45;dHovColJ')
+                var totHovCol = css.getPropertyValue('--totHovColJ')
                 var tCol = css.getPropertyValue('&#45;&#45;tCol')
                 var lCol = css.getPropertyValue('&#45;&#45;lCol')
                 var xGCol = css.getPropertyValue('&#45;&#45;xGCol')
@@ -57,6 +58,13 @@
                             backgroundColor: dCol,
                             hoverBackgroundColor: dHovCol,
                             hoverBorderWidth: 0
+                        },
+                        {
+                           label: 'Nombre total de velages',
+                           data: total,
+                           backgroundColor: tCol,
+                           hoverBackgroundColor: totHovCol,
+                           hoverBorderWidth: 0
                         }
                         ]
                     },
@@ -77,6 +85,7 @@
                             }
                         },
                         responsive: true,
+                        maintainAspectRatio: false,
                         tooltips: {
                             mode: 'label',
                         },
