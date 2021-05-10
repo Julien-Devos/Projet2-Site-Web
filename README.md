@@ -49,10 +49,20 @@ database to make them more visual.
     
   - And then you can go on: <http://127.0.0.1:5000>
 
+## Website screeshots
+
+A screenshots folder is in the project files if needed. The screenshots are made in 
+order to have one page on each image, so the format is not always right.
+To have the bes representation of the website you have to zoom on the images.
+
 ## Project file tree:
 
 ```
 .
+├── Captures d'écran du site 
+│   ├── Thème clair
+│   ├── Thème sombre
+│   └── Version mobile
 ├── instance
 │   └── data.sqlite # Database
 ├── webSite # python Package

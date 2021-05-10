@@ -49,12 +49,22 @@ données provenant d'une DataBase pour en faciliter la visualisation.
     
   - Rendez vous alors sur: <http://127.0.0.1:5000>
 
+## Captures d'écran du site
+
+Un dossier de captures d'écran est présent si nécessaire. Les captures d'écran sont 
+faites de sorte à avoir une page par image, donc le format n'est pas toujours respecté.
+Pour avoir la meilleure représentation possible il faut zoomer sur les images.
+
 ## Arborescence de fichiers du projet:
 
 ```
 .
+├── Captures d'écran du site 
+│   ├── Thème clair
+│   ├── Thème sombre
+│   └── Version mobile
 ├── instance
-│   └── data.sqlite # base de données
+│   └── data.sqlite # Base de données
 ├── webSite # python Package
 │   ├── sql-data # Dossier qui contient les fichiers SQL
 │   │   ├── animaux_data.sql
