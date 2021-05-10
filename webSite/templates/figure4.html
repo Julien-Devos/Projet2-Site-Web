@@ -10,8 +10,29 @@
             <h1 class="title" id="figure4">Figure 4</h1>
         </div>
         <div class="flex-text">
-            <p class="paragraph">La figure 4.2 décrit, pour chaque famille, le taux de décès prématurés. Ce taux est également comparé au taux de veaux encore vivants aprés un certain laps de temps.
-                 Ces taux sont calculés par rapport au nombre total de velages dans chaque famille.</p>
+            <p class="sub-title">
+                Problématique
+            </p>
+        </div>
+        <div class="flex-text">
+            <p class="paragraph">
+                Il arrive, dans la ferme des 3 chaînes, que certains veaux dédèdent de manière prématurée.
+                Nous nous sommes alors questionnés quant aux différentes raisons pouvant expliquer de tels drames.
+                Nous avons alors décidé de nous pencher sur les différentes familles de veaux pour découvrir si certaines
+                d'entre elles sont particulièrement touchées par ces décès prématurés.
+            </p>
+        </div>
+        <div class="flex-text">
+            <p class="sub-title">
+                Graphique
+            </p>
+        </div>
+        <div class="flex-text">
+            <p class="paragraph">
+                Ce graphe vise donc à illustrer le taux de veaux vivants par rapport au taux de
+                veaux décédés prématurément, et ce, par rapport au pourcentage total de veaux présents
+                dans la famille.     
+            </p>
         </div>
         <div>
             <canvas id="bar-chart" width="1600" height="500"></canvas>
@@ -22,6 +43,7 @@
                 var vHovCol = css.getPropertyValue('--vHovColJ')
                 var jCol = css.getPropertyValue('--jColB')
                 var mCol = css.getPropertyValue('--mColJ')
+                var fCol = css.getPropertyValue('--fColB')
                 var mHovCol = css.getPropertyValue('--mHovColJ')
                 var dCol = css.getPropertyValue('--dColJ')
                 var dHovCol = css.getPropertyValue('--dHovColJ')
@@ -38,6 +60,7 @@
                 var familles = {{data[0] | safe}}
                 var vivant = {{data[1] | safe}}
                 var decede = {{data[2] | safe}}
+                var total = {{data[3] | safe}}
 
                 var bar_ctx = document.getElementById('bar-chart');
                 var bar_chart = new Chart(bar_ctx, {
@@ -58,6 +81,14 @@
                             backgroundColor: jCol,
                             hoverBackgroundColor: dHovCol,
                             hoverBorderWidth: 0
+                        },
+                        {
+                            label: 'Nombre total de veaux',
+                            data: total,
+                            backgroundColor: fCol,
+                            hoverBackgroundColor: dHovCol,
+                            hoverBorderWidth: 0,
+                            hidden: true
                         }
                         ]
                     },
