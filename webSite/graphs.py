@@ -238,12 +238,10 @@ def figure5():
 
     # On va maintenant calculer les taux pour chaque famille à partir des valeurs récoltés et les mettre dans d_2
     d_2 = {}
-    # d_2 aura la forme : { Nom: [Taux de femelles, Taux de jumeaux, Taux de mort préma], ... }
+    # d_2 aura la forme : { Nom: [Taux de femelles, Taux de jumeaux, Taux de mort préma, Nbre total de vaches], ... }
     for i in d.items():
-        d_2[i[0]] = [round(((i[1][1] * 100)/ i[1][0]), 2), round(((i[1][3] * 100)/i[1][0]), 2),
-                     round(((i[1][4] * 100)/ i[1][0]), 2), i[1][0]]
-        # On additionne les taux obtenus pour pouvoir trier le graphique par leur somme
-        d_2[i[0]].append((d_2[i[0]][0] + d_2[i[0]][1] + d_2[i[0]][2]))
+        d_2[i[0]] = [round(((i[1][1] * 100)/i[1][0]), 2), round(((i[1][3] * 100)/i[1][0]), 2),
+                     round(((i[1][4] * 100)/i[1][0]), 2), i[1][0]]
 
     # On trie les familles par la somme de leur 3 taux
     d_2 = {k: v for k, v in sorted(d_2.items(), key=lambda item: item[1][3], reverse=False)}
