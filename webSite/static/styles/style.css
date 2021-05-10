@@ -1,10 +1,10 @@
 
 /* Graphics colors */
 :root{
-  --dColJ: rgba(36, 113, 163, 0.5);
-  --dHovColJ: rgba(41, 128, 185, 0.5);
-  --vColJ: rgba(23, 165, 137, 0.5);
-  --vHovColJ: rgba(26, 188, 156, 0.5);
+  --dColJ: #3fa1e0;
+  --dHovColJ: #58b3ee;
+  --vColJ: #89DBCC;
+  --vHovColJ: #bcfaec;
   --mColJ: #CB4335;
   --mHovColJ: #EC7063;
   --totColJ: #ea9f18;
