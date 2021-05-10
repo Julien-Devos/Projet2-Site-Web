@@ -18,19 +18,20 @@
         </div>
             <script>
                 var css = getComputedStyle(document.body)
-                var vCol = css.getPropertyValue('&#45;&#45;vColJ')
-                var vHovCol = css.getPropertyValue('&#45;&#45;vHovColJ')
-                var mCol = css.getPropertyValue('&#45;&#45;mColJ')
-                var mHovCol = css.getPropertyValue('&#45;&#45;mHovColJ')
-                var dCol = css.getPropertyValue('&#45;&#45;dColJ')
-                var dHovCol = css.getPropertyValue('&#45;&#45;dHovColJ')
+                var vCol = css.getPropertyValue('--vColJ')
+                var vHovCol = css.getPropertyValue('--vHovColJ')
+                var mCol = css.getPropertyValue('--mColJ')
+                var mHovCol = css.getPropertyValue('--mHovColJ')
+                var dCol = css.getPropertyValue('--dColJ')
+                var dHovCol = css.getPropertyValue('--dHovColJ')
                 var totCol = css.getPropertyValue('--totColJ')
                 var totHovCol = css.getPropertyValue('--totHovColJ')
-                var lCol = css.getPropertyValue('&#45;&#45;lCol')
-                var xGCol = css.getPropertyValue('&#45;&#45;xGCol')
-                var xValCol = css.getPropertyValue('&#45;&#45;xValCol')
-                var yGCol = css.getPropertyValue('&#45;&#45;yGCol')
-                var yValCol = css.getPropertyValue('&#45;&#45;yValCol')
+                var tCol = css.getPropertyValue('--tCol')
+                var lCol = css.getPropertyValue('--lCol')
+                var xGCol = css.getPropertyValue('--xGCol')
+                var xValCol = css.getPropertyValue('--xValCol')
+                var yGCol = css.getPropertyValue('--yGCol')
+                var yValCol = css.getPropertyValue('--yValCol')
 
 
                 var familles = {{data[0] | safe}}
@@ -46,7 +47,7 @@
                         datasets: [
                         {
                             label: ' Veaux Vivants',
-                            data: vivants,
+                            data: vivant,
                             backgroundColor: vCol,
                             hoverBackgroundColor: vHovCol,
                             hoverBorderWidth: 0
@@ -75,8 +76,7 @@
                          title: {
                              display: true,
                              text: "Pourcentage d'animaux décédés prématurément",
-                             fontColor: tCol
-
+                             fontColor: tCol,
                          },
                          legend: {
                              labels: {
