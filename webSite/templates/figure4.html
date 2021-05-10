@@ -10,8 +10,7 @@
             <h1 class="title" id="figure4">Figure 4</h1>
         </div>
         <div class="flex-text">
-            <p class="paragraph">La figure 4.2 décrit, pour chaque famille, le taux de décès prématurés subdvisé en ses
-                9 différentes causes. Ce taux est également comparé au taux de veaux encore vivants aprés un certain laps de temps.
+            <p class="paragraph">La figure 4.2 décrit, pour chaque famille, le taux de décès prématurés. Ce taux est également comparé au taux de veaux encore vivants aprés un certain laps de temps.
                  Ces taux sont calculés par rapport au nombre total de velages dans chaque famille.</p>
         </div>
         <div>
@@ -25,8 +24,8 @@
                 var mHovCol = css.getPropertyValue('&#45;&#45;mHovColJ')
                 var dCol = css.getPropertyValue('&#45;&#45;dColJ')
                 var dHovCol = css.getPropertyValue('&#45;&#45;dHovColJ')
+                var totCol = css.getPropertyValue('--totColJ')
                 var totHovCol = css.getPropertyValue('--totHovColJ')
-                var tCol = css.getPropertyValue('&#45;&#45;tCol')
                 var lCol = css.getPropertyValue('&#45;&#45;lCol')
                 var xGCol = css.getPropertyValue('&#45;&#45;xGCol')
                 var xValCol = css.getPropertyValue('&#45;&#45;xValCol')
@@ -53,7 +52,7 @@
                             hoverBorderWidth: 0
                         },
                         {
-                            label: 'Décès prématurés',
+                            label: 'Décédés prématurément',
                             data: decede,
                             backgroundColor: dCol,
                             hoverBackgroundColor: dHovCol,
@@ -62,7 +61,7 @@
                         {
                             label: 'Nombre total de velages',
                             data: total,
-                            backgroundColor: tCol,
+                            backgroundColor: totCol,
                             hoverBackgroundColor: totHovCol,
                             hoverBorderWidth: 0
                         }
