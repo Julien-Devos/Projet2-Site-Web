@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+""{% extends 'base.html' %}
 
 {% block header %}
     <h1>{% block title %}Figure 4{% endblock %}</h1>
@@ -10,97 +10,102 @@
             <h1 class="title" id="figure4">Figure 4</h1>
         </div>
         <div class="flex-text">
-            <p class="paragraph">La figure 4 décrit, pour chaque famille, le taux de décès prématurés subdvisé en ses
+            <p class="paragraph">La figure 4.2 décrit, pour chaque famille, le taux de décès prématurés subdvisé en ses
                 9 différentes causes. Ce taux est également comparé au taux de veaux encore vivants aprés un certain laps de temps.
                  Ces taux sont calculés par rapport au nombre total de velages dans chaque famille.</p>
         </div>
-        <canvas id="bar-chart" width="1600" height="700"></canvas>
-<!--            <script>-->
-<!--                var css = getComputedStyle(document.body)-->
-<!--                var vCol = css.getPropertyValue('&#45;&#45;vColJ')-->
-<!--                var vHovCol = css.getPropertyValue('&#45;&#45;vHovColJ')-->
-<!--                var mCol = css.getPropertyValue('&#45;&#45;mColJ')-->
-<!--                var mHovCol = css.getPropertyValue('&#45;&#45;mHovColJ')-->
-<!--                var dCol = css.getPropertyValue('&#45;&#45;dColJ')-->
-<!--                var dHovCol = css.getPropertyValue('&#45;&#45;dHovColJ')-->
-<!--                var tCol = css.getPropertyValue('&#45;&#45;tCol')-->
-<!--                var lCol = css.getPropertyValue('&#45;&#45;lCol')-->
-<!--                var xGCol = css.getPropertyValue('&#45;&#45;xGCol')-->
-<!--                var xValCol = css.getPropertyValue('&#45;&#45;xValCol')-->
-<!--                var yGCol = css.getPropertyValue('&#45;&#45;yGCol')-->
-<!--                var yValCol = css.getPropertyValue('&#45;&#45;yValCol')-->
+        <div>
+            <canvas id="bar-chart" width="1600" height="500"></canvas>
+        </div>
+            <script>
+                var css = getComputedStyle(document.body)
+                var vCol = css.getPropertyValue('&#45;&#45;vColJ')
+                var vHovCol = css.getPropertyValue('&#45;&#45;vHovColJ')
+                var mCol = css.getPropertyValue('&#45;&#45;mColJ')
+                var mHovCol = css.getPropertyValue('&#45;&#45;mHovColJ')
+                var dCol = css.getPropertyValue('&#45;&#45;dColJ')
+                var dHovCol = css.getPropertyValue('&#45;&#45;dHovColJ')
+                var tCol = css.getPropertyValue('&#45;&#45;tCol')
+                var lCol = css.getPropertyValue('&#45;&#45;lCol')
+                var xGCol = css.getPropertyValue('&#45;&#45;xGCol')
+                var xValCol = css.getPropertyValue('&#45;&#45;xValCol')
+                var yGCol = css.getPropertyValue('&#45;&#45;yGCol')
+                var yValCol = css.getPropertyValue('&#45;&#45;yValCol')
 
 
-<!--                var vivants = {{data[1] | safe}}-->
-<!--                var decede = {{data[2] | safe}}-->
-<!--                var familles = {{data[0] | safe}}-->
-<!--                var bar_ctx = document.getElementById('bar-chart');-->
-<!--                var bar_chart = new Chart(bar_ctx, {-->
-<!--                    type: 'bar',-->
-<!--                    data: {-->
-<!--                        labels: familles,-->
-<!--                        datasets: [-->
-<!--                        {-->
-<!--                            label: 'Vivants',-->
-<!--                            data: vivants,-->
-<!--                            backgroundColor: vCol,-->
-<!--                            hoverBackgroundColor: vHovCol,-->
-<!--                            hoverBorderWidth: 0-->
-<!--                        },-->
-<!--                        {-->
-<!--                            label: 'Décès prématurés',-->
-<!--                            data: decede,-->
-<!--                            backgroundColor: dCol,-->
-<!--                            hoverBackgroundColor: dHovCol,-->
-<!--                            hoverBorderWidth: 0-->
-<!--                        },-->
-<!--                        ]-->
-<!--                    },-->
-<!--                       options: {-->
-<!--                        layout: {-->
-<!--                          padding: 25-->
-<!--                        },-->
-<!--                        title: {-->
-<!--                            display: true,-->
-<!--                            text: "Pourcentage d'animaux décédés prématurément",-->
-<!--                            fontColor: tCol-->
+                var familles = {{data[0] | safe}}
+                var vivant = {{data[1] | safe}}
+                var decede = {{data[2] | safe}}
+                var total = {{data[3] | safe}}
 
-<!--                        },-->
-<!--                        legend: {-->
-<!--                            labels: {-->
-<!--                                fontColor: lCol-->
-<!--                            }-->
-<!--                        },-->
-<!--                        responsive: true,-->
-<!--                        tooltips: {-->
-<!--                            mode: 'label',-->
-<!--                        },-->
-<!--                        scales: {-->
-<!--                          xAxes: [{-->
-<!--                              gridLines: {-->
-<!--                                  color: xGCol-->
-<!--                                },-->
-<!--                              ticks: {-->
-<!--                                  fontColor: xValCol-->
-<!--                              },-->
-<!--                              barPercentage: 0.4,-->
-<!--                              stacked: true,-->
-<!--                              beginAtZero: true-->
-<!--                            }],-->
-<!--                          yAxes: [{-->
-<!--                              gridLines: {-->
-<!--                                    color: yGCol-->
-<!--                                },-->
-<!--                              ticks: {-->
-<!--                                  fontColor: yValCol-->
-<!--                              },-->
-<!--                              stacked: true,-->
-<!--                              beginAtZero: true-->
-<!--                            }],-->
-<!--                        },-->
-<!--                    },-->
-<!--                   }-->
-<!--                );-->
-<!--            </script>-->
+                var bar_ctx = document.getElementById('bar-chart');
+                var bar_chart = new Chart(bar_ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: familles,
+                        datasets: [
+                        {
+                            label: ' Veaux Vivants',
+                            data: vivants,
+                            backgroundColor: vCol,
+                            hoverBackgroundColor: vHovCol,
+                            hoverBorderWidth: 0
+                        },
+                        {
+                            label: 'Décès prématurés',
+                            data: decede,
+                            backgroundColor: dCol,
+                            hoverBackgroundColor: dHovCol,
+                            hoverBorderWidth: 0
+                        }
+                        ]
+                    },
+
+                       options: {
+                        layout: {
+                          padding: 25
+                        },
+                        title: {
+                            display: true,
+                            text: "Pourcentage d'animaux décédés prématurément",
+                            fontColor: tCol
+
+                        },
+                        legend: {
+                            labels: {
+                                fontColor: lCol
+                            }
+                        },
+                        responsive: true,
+                        tooltips: {
+                            mode: 'label',
+                        },
+                        scales: {
+                          xAxes: [{
+                              gridLines: {
+                                  color: xGCol
+                                },
+                              ticks: {
+                                  fontColor: xValCol
+                              },
+                              barPercentage: 0.4,
+                              stacked: true,
+                              beginAtZero: true
+                            }],
+                          yAxes: [{
+                              gridLines: {
+                                    color: yGCol
+                                },
+                              ticks: {
+                                  fontColor: yValCol
+                              },
+                              stacked: true,
+                              beginAtZero: true
+                            }],
+                        },
+                    },
+                   }
+                );
+            </script>
     </body>
 {% endblock %}
