@@ -52,7 +52,7 @@
                 légende pour la voir sur le graphique.</p>
         </div>
 
-        <div class="figure" id="fig3.2">
+        <div class="figure" id="fig3">
             <canvas id="bar-chart" width="100%" height="100%"></canvas>
         </div>
             <script>
@@ -79,7 +79,7 @@
                 var autre = {{data[3] | safe}}
                 var total = {{data[4] | safe}}
                 var bar_ctx = document.getElementById('bar-chart');
-                var bar_chart = new Chart(bar_ctx, {
+                var figure3 = new Chart(bar_ctx, {
                     type: 'bar',
                     data: {
                         labels: familles,
