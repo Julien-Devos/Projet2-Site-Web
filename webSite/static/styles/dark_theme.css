@@ -12,8 +12,8 @@
   --jColB: #9370db;
   --dColB: #9932cc;
   --vColB: #9ba09b;
-  --baColB: rgba(241, 103, 241,0.1);
-  --baHovColB: rgba(198, 68, 198, 0.1);
+  --brColB: rgba(92, 207, 255, 0.2);
+  --brHovColB: rgba(120, 217, 255, 0.2);
 }
 
 .theme-icon:before{

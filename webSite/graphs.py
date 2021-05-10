@@ -8,18 +8,23 @@ def figure1():
 
     velages = []
     for velage in db.execute('SELECT velages.date FROM velages ORDER BY velages.id'):
+        # Rajoute à la liste 'velages' les dates de chaque vêlage
         velages.append(velage)
 
     d = {'New Moon': 0, 'Waxing Crescent': 0, 'First Quarter': 0, 'Waxing Gibbous': 0, 'Full Moon': 0,
          'Waning Gibbous': 0, 'Last Quarter': 0, 'Waning Crescent': 0}
     for dates in velages:
         dateSplit = dates[0].split("/")
+        # On utilise le package datetime pour transformer le str reçu en objet date
         date = datetime(int(dateSplit[2]), int(dateSplit[1]), int(dateSplit[0]))
+        # On utilise le code du fichier moon pour obtenir la phase de la lune en fonction de la date
         moonPhase = moon.phase(date)
+        # On incrémente le compteur du dictionnaire pour la phase en question
         d[moonPhase] += 1
 
     data = []
     for phaseCount in d.keys():
+        # On rajoute les valeurs obtenues dans une liste qui sera utilisé pour faire le graphique
         data.append(d[phaseCount])
 
     return data
@@ -33,11 +38,10 @@ def figure2():
                           'animaux_velages, animaux WHERE animaux_velages.velage_id = velages.id and '
                           'animaux_velages.animal_id = animaux.id ORDER BY velages.id'):
         data_from_db.append(dcd)
-    # print(data_from_db[1][1])
+
     data_3 = [[] for i in range(1, 13)]
     for i in range(len(data_from_db)):
         new_date = data_from_db[i][1].split("/")
-        # print(new_date)
         if int(new_date[1]) == 1:
             data_3[0].append(data_from_db[i][0])
         if int(new_date[1]) == 2:
@@ -76,20 +80,22 @@ def figure3():
     for velage in db.execute('SELECT animaux.mort_ne, animaux.decede, familles.nom FROM velages, animaux_velages, animaux,'
                              'familles WHERE animaux_velages.velage_id = velages.id and animaux_velages.animal_id = '
                              'animaux.id  and familles.id = animaux.famille_id  ORDER BY velages.id'):
+        # Rajoute à la liste 'velages' les valeurs de mort_ne, decede et nom de famille pour chaque vêlage
         velages.append(velage)
 
+    # Schéma du dictionnaire {'nom_famille': ['nb_vivant','nb_mort_ne','nb_mort_prem']'}
     Data = {}
     for velage in velages:
-        # Schéma du dictionnaire {'nom_famille': ['nb_vivant','nb_mort_ne','nb_mort_prem']'}
         mort_ne, decede, nom = velage[0], velage[1], velage[2]
-        if nom == 'Myrtille':
-            print(mort_ne,decede)
         if nom not in Data:
+            # Si le nom n'est pas dans le dictionnaire, on l'ajoute avec ses valeurs dans une liste
+            # (tot_vivants,tot_mort_nés,tot_morts_préms)
             if mort_ne == 0 and decede == 0:
                 Data[nom] = [1, 0, 0]
             else:
                 Data[nom] = [0, mort_ne, decede]
         else:
+            # Si le nom est dans le dictionnaire, on rajoute 1 là où c'est nécessaire
             if mort_ne == 0 and decede == 0:
                 Data[nom][0] += 1
             elif mort_ne == 1 and decede == 0:
@@ -97,23 +103,24 @@ def figure3():
             elif mort_ne == 0 and decede == 1:
                 Data[nom][2] += 1
 
+    # Pour chaque nom de famille, on calcule le pourcentage de mort-nés / vivants et décès prématurés
     for family_name in Data.keys():
         nb_vivant = Data[family_name][0]
         nb_mort_ne = Data[family_name][1]
         nb_mort_prem = Data[family_name][2]
         vel_total = nb_vivant + nb_mort_ne + nb_mort_prem
 
-        if family_name == 'Myrtille':
-            print(family_name,nb_vivant,nb_mort_ne,nb_mort_prem)
-
         Data[family_name][0] = round((nb_vivant * 100) / vel_total,2)
         Data[family_name][1] = round((nb_mort_ne * 100) / vel_total,2)
         Data[family_name][2] = round((nb_mort_prem * 100) / vel_total,2)
         Data[family_name].append(vel_total)
 
-    # Sort the data
+    # Le dictionnaire est alors devenu: {'nom_famille': ['% vivants','% mort-nés','% mort-prem','vel-tot']'}
+
+    # On trie les données en fonction du pourcentage de mort-nés décroissant
     Data = {k: v for k, v in sorted(Data.items(), key=lambda item: item[1][1], reverse=True)}
 
+    # On met les valeurs dans des listes séparées qui seront utilisées pour le graphique en javascript
     data_lst = [[], [], [], [], []]
     for nom in Data:
         data_lst[0].append(nom)
@@ -121,6 +128,8 @@ def figure3():
         data_lst[2].append(Data[nom][1])
         data_lst[3].append(Data[nom][2])
         data_lst[4].append(Data[nom][3])
+
+    # Format de la liste data: [[lst des noms de familles],[lst des % de mort-nés]]
 
     return data_lst
 
@@ -168,9 +177,7 @@ def figure4():
     #     data_liste[1].append(dico[nom][0])
     #     data_liste[2].append(dico[nom][1])
     #     data_liste[3].append(dico[nom][2])
-
     return None
-
 
 def figure5():
     """

@@ -55,8 +55,8 @@
                 var css = getComputedStyle(document.body)
                 var bCol = css.getPropertyValue('--bColB')
                 var bHovCol = css.getPropertyValue('--bHovColB')
-                var baCol = css.getPropertyValue('--baColB')
-                var baHovCol = css.getPropertyValue('--baHovColB')
+                var brCol = css.getPropertyValue('--brColB')
+                var brHovCol = css.getPropertyValue('--brHovColB')
                 var tCol = css.getPropertyValue('--tCol')
                 var lCol = css.getPropertyValue('--lCol')
                 var xGCol = css.getPropertyValue('--xGCol')
@@ -87,8 +87,8 @@
                             data: datas,
                             borderColor: bCol,
                             hoverBorderColor: bHovCol,
-                            backgroundColor: baCol,
-                            hoverBackgroundColor: baHovCol,
+                            backgroundColor: brCol,
+                            hoverBackgroundColor: brHovCol,
                             hoverBorderWidth: 0
                         }
                         ]
@@ -99,7 +99,7 @@
                         },
                         title: {
                             display: true,
-                            text: "Graphique du taux de velages par phases de lune",
+                            text: "Graphique du nombre de velages par phase de lune",
                             fontColor: tCol
 
                         },
