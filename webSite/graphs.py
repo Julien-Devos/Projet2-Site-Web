@@ -165,6 +165,8 @@ def figure4():
         dico[ndf][1] = round((cmbmort * 100) / ntotal,2)
         dico[ndf].append(ntotal)
         
+    dico = {k: v for k, v in sorted(dico.items(), key=lambda item: item[1][1], reverse=False)}
+    
     data_liste = [[], [], [], []]
     for nom in dico:
         data_liste[0].append(nom)
