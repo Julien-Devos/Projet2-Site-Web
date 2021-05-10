@@ -56,7 +56,7 @@ database to make them more visual.
 ├── instance
 │   └── data.sqlite # Database
 ├── webSite # python Package
-│   ├── sql-data
+│   ├── sql-data # Folder that contains all sql files
 │   │   ├── animaux_data.sql
 │   │   ├── animaux_types_data.sql
 │   │   ├── animaux_velages_data.sql
@@ -67,12 +67,12 @@ database to make them more visual.
 │   │   ├── velages_complications_data.sql
 │   │   └── velages_data.sql
 │   ├── static
-│   │   ├── Chart.js
+│   │   ├── Chart.js # Folder that contains files to use Chart.js
 │   │   │   ├── Chart.min.css
 │   │   │   └── Chart.min.js
-│   │   ├── Fonts
-│   │   │   └── icons.woff
-│   │   ├── img
+│   │   ├── Fonts 
+│   │   │   └── icons.woff # Font used for icons on the website
+│   │   ├── img # Folder that contains all the images/logos used on the website
 │   │   │   ├── illustrations
 │   │   │   │   ├── farm.png
 │   │   │   │   ├── farm2.png
@@ -86,12 +86,12 @@ database to make them more visual.
 │   │   │   ├── logo.png
 │   │   │   ├── logo404.png
 │   │   │   └── logoKAWAI.png
-│   │   ├── styles
+│   │   ├── styles # Folder that contains all the css of the website
 │   │   │   ├── dark_theme.css
 │   │   │   ├── light_theme.css
 │   │   │   └── style.css
-│   │   └── script.js
-│   ├── templates
+│   │   └── script.js # Script used to switch theme and update cookies
+│   ├── templates # Folder that contains all the html files
 │   │   ├── 404.html
 │   │   ├── base.html
 │   │   ├── figure1.html
@@ -100,15 +100,15 @@ database to make them more visual.
 │   │   ├── figure4.html
 │   │   ├── figure5.html
 │   │   └── index.html
-│   ├── __init__.py
-│   ├── db_create.py
-│   ├── db_init.py
-│   ├── graphs.py
-│   ├── moon.py
-│   └── pages.py
+│   ├── __init__.py # Python file used to start the flask app
+│   ├── db_create.py # Python file used to create the database
+│   ├── db_init.py # Python file used to init the 'create-db' and more
+│   ├── graphs.py # Python file used to return the data that will be used in charts
+│   ├── moon.py # Python file used to know the moon phase of a date
+│   └── pages.py # Python file used to render all the pages of the website
 ├── .gitignore    
 ├── README.fr.md
 ├── README.md
 ├── requirements.txt # Contains all the needed packages
-└── setup.py    
+└── setup.py # Python file used to install all the needed packages
 ```

@@ -54,9 +54,9 @@ données provenant d'une DataBase pour en faciliter la visualisation.
 ```
 .
 ├── instance
-│   └── data.sqlite # Database
+│   └── data.sqlite # base de données
 ├── webSite # python Package
-│   ├── sql-data
+│   ├── sql-data # Dossier qui contient les fichiers SQL
 │   │   ├── animaux_data.sql
 │   │   ├── animaux_types_data.sql
 │   │   ├── animaux_velages_data.sql
@@ -67,12 +67,12 @@ données provenant d'une DataBase pour en faciliter la visualisation.
 │   │   ├── velages_complications_data.sql
 │   │   └── velages_data.sql
 │   ├── static
-│   │   ├── Chart.js
+│   │   ├── Chart.js # Dossier qui contient les fichier pour utiliser Chart.js
 │   │   │   ├── Chart.min.css
 │   │   │   └── Chart.min.js
-│   │   ├── Fonts
-│   │   │   └── icons.woff
-│   │   ├── img
+│   │   ├── Fonts 
+│   │   │   └── icons.woff # Police utilisée pour les icons du site
+│   │   ├── img # Dossier qui contient toutes les images/logos utilisées sur le site
 │   │   │   ├── illustrations
 │   │   │   │   ├── farm.png
 │   │   │   │   ├── farm2.png
@@ -86,12 +86,12 @@ données provenant d'une DataBase pour en faciliter la visualisation.
 │   │   │   ├── logo.png
 │   │   │   ├── logo404.png
 │   │   │   └── logoKAWAI.png
-│   │   ├── styles
+│   │   ├── styles # Dossier qui contient tout le css du site
 │   │   │   ├── dark_theme.css
 │   │   │   ├── light_theme.css
 │   │   │   └── style.css
-│   │   └── script.js
-│   ├── templates
+│   │   └── script.js # Script utilisé pour changer de theme et mettre le cookie à jour
+│   ├── templates # Dossier qui contient tous les fichiers html
 │   │   ├── 404.html
 │   │   ├── base.html
 │   │   ├── figure1.html
@@ -100,15 +100,15 @@ données provenant d'une DataBase pour en faciliter la visualisation.
 │   │   ├── figure4.html
 │   │   ├── figure5.html
 │   │   └── index.html
-│   ├── __init__.py
-│   ├── db_create.py
-│   ├── db_init.py
-│   ├── graphs.py
-│   ├── moon.py
-│   └── pages.py
+│   ├── __init__.py # Fichier python utilisé pour lancer l'app flask
+│   ├── db_create.py # Fichier python utilisé pour créer la base de données
+│   ├── db_init.py # Fichier python utilisé pour initialiser la commande 'create-db' et plus
+│   ├── graphs.py # Fichier python utilisé pour retourner les données affichées sur les graphiques
+│   ├── moon.py # Fichier python utilisé pour connaitre la phase de la lune d'une date
+│   └── pages.py # Fichier python utilisé pour afficher toutes les pages html du site
 ├── .gitignore    
 ├── README.fr.md
 ├── README.md
-├── requirements.txt # Contient les packages à installer
-└── setup.py    
+├── requirements.txt # Contient tous les packages à installer
+└── setup.py # Fichier python utilisé pour télécharger tous les packages nécéssaires
 ```
