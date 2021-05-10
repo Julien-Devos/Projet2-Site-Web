@@ -20,6 +20,7 @@
                 var css = getComputedStyle(document.body)
                 var vCol = css.getPropertyValue('--vColJ')
                 var vHovCol = css.getPropertyValue('--vHovColJ')
+                var jCol = css.getPropertyValue('--jColB')
                 var mCol = css.getPropertyValue('--mColJ')
                 var mHovCol = css.getPropertyValue('--mHovColJ')
                 var dCol = css.getPropertyValue('--dColJ')
@@ -37,7 +38,6 @@
                 var familles = {{data[0] | safe}}
                 var vivant = {{data[1] | safe}}
                 var decede = {{data[2] | safe}}
-                var total = {{data[3] | safe}}
 
                 var bar_ctx = document.getElementById('bar-chart');
                 var bar_chart = new Chart(bar_ctx, {
@@ -55,17 +55,9 @@
                         {
                             label: 'Décédés prématurément',
                             data: decede,
-                            backgroundColor: dCol,
+                            backgroundColor: jCol,
                             hoverBackgroundColor: dHovCol,
                             hoverBorderWidth: 0
-                        },
-                        {
-                            label: 'Nombre total de velages',
-                            data: total,
-                            backgroundColor: totCol,
-                            hoverBackgroundColor: totHovCol,
-                            hoverBorderWidth: 0,
-                            hidden: true
                         }
                         ]
                     },
